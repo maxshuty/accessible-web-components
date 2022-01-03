@@ -12,6 +12,7 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const headerComment = require('gulp-header-comment');
 
 gulp.task('js-minify', function () {
   return gulp
