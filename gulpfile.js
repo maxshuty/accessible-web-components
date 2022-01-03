@@ -27,6 +27,11 @@ gulp.task('js-minify', function () {
         path.extname = '.min.js';
       })
     )
+    .pipe(
+      headerComment(
+        'Max Poshusta | v1.0.0 | https://github.com/maxshuty/accessible-web-components | https://www.linkedin.com/in/maxposhusta'
+      )
+    )
     .pipe(gulp.dest('./dist'))
     .pipe(gulp.dest('./docs'));
 });
