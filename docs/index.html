@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Accessible UI Components Demo</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.svg" />
+
+    <!-- Custom CSS for the demo -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Loading the Simple Range slider component -->
+    <script type="text/javascript" src="./simpleRange.min.js"></script>
+  </head>
+  <body>
+    <h1>Accessible UI Components Demo</h1>
+
+    <div class="range-selector__container">
+      <h2>Simple Range Slider Demo</h2>
+
+      <h3>
+        CDN (a tiny 13.55kb) <a href=""></a>
+      </h3>
+
+      <div>
+        <p>
+          Basic usage
+          
+          <pre>
+            <code>
+&lt;range-selector min-range="0" max-range="1000" /&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector min-range="0" max-range="1000" />
+      </div>
+
+      <div>
+        <p>
+          Using an ID using <code>id</code> so that it will be emitted on the
+          <code>range-changed</code> event and using <code>min-label</code> and
+          <code>max-label</code> for accessibility. Also using
+          <code>number-of-legend-items-to-show</code>
+          to show 6 values below the slider and setting the slider color using
+          <code>slider-color</code>.
+
+          <pre>
+            <code>
+&lt;range-selector
+  id="yearSelector"
+  min-label="Minimum"
+  max-label="Maximum"
+  min-range="1000"
+  max-range="2022"
+  number-of-legend-items-to-show="6"
+  slider-color="#6b5b95"
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector
+          id="yearSelector"
+          min-label="Minimum"
+          max-label="Maximum"
+          min-range="1000"
+          max-range="2022"
+          number-of-legend-items-to-show="6"
+          slider-color="#6b5b95"
+        />
+      </div>
+
+      <div>
+        <p>
+          You can adjust the number of legend items to show and you can also use
+          the shorthand <code>min</code> & <code>max</code> instead of
+          <code>min-range</code> and <code>max-range</code>.
+
+          <pre>
+            <code>
+&lt;range-selector
+  min-label="Minimum"
+  max-label="Maximum"
+  min="99"
+  max="999"
+  number-of-legend-items-to-show="4"
+  hide-label
+  slider-color="#92a8d1"
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector
+          min-label="Minimum"
+          max-label="Maximum"
+          min="99"
+          max="999"
+          number-of-legend-items-to-show="4"
+          hide-label
+          slider-color="#92a8d1"
+        />
+      </div>
+
+      <div>
+        <p>
+          Altering the colors of the slider, slider circle, and accessibility
+          focus color using <code>slider-color</code>,
+          <code>circle-color</code>, <code>circle-border-color</code>, and
+          <code>circle-focus-border-color</code>. Any valid CSS
+          <code>color</code>, <code>hex</code>, etc will work.
+
+          <pre>
+            <code>
+&lt;range-selector
+  min-label="Minimum Range"
+  max-label="Maximum Range"
+  min-range="5"
+  max-range="555"
+  slider-color="orange"
+  circle-color="#f7cac9"
+  circle-border-color="#083535"
+  circle-focus-border-color="#3ec400"
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector
+          min-label="Minimum Range"
+          max-label="Maximum Range"
+          min-range="5"
+          max-range="555"
+          slider-color="orange"
+          circle-color="#f7cac9"
+          circle-border-color="#083535"
+          circle-focus-border-color="#3ec400"
+        />
+      </div>
+
+      <div>
+        <p>
+          Using a custom range changed event name using
+          <code>event-name-to-emit-on-change</code> so that your consumer of
+          this component can listen for this specific event name when the user
+          has adjusted the ranges.
+
+          <pre>
+            <code>
+&lt;range-selector
+  min-range="1092"
+  max-range="2022"
+  min-label="i18nMinLabel"
+  max-label="i18nMaxLabel"
+  id="yearRangeSelector"
+  event-name-to-emit-on-change="my-custom-range-changed-event"
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector
+          min-range="1092"
+          max-range="2022"
+          min-label="i18nMinLabel"
+          max-label="i18nMaxLabel"
+          id="yearRangeSelector"
+          event-name-to-emit-on-change="my-custom-range-changed-event"
+        />
+      </div>
+
+      <div>
+        <p>
+          Hiding the legend using <code>hide-legend</code>.
+          <pre>
+            <code>
+&lt;range-selector
+  min-label="i18nLabel"
+  max-label="i18nLabel"
+  min-range="5"
+  max-range="500"
+  number-of-legend-items-to-show="6"
+  hide-legend
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector
+          min-label="i18nLabel"
+          max-label="i18nLabel"
+          min-range="5"
+          max-range="500"
+          number-of-legend-items-to-show="6"
+          hide-legend
+        />
+      </div>
+
+      <div>
+        <p>
+          Hiding the legend and the label using <code>hide-legend</code> and
+          <code>hide-label</code>.
+
+          <pre>
+            <code>
+&lt;range-selector
+  min-label="i18nLabel"
+  max-label="i18nLabel"
+  min-range="123"
+  max-range="987"
+  number-of-legend-items-to-show="6"
+  hide-legend
+  hide-label
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector
+          min-label="i18nLabel"
+          max-label="i18nLabel"
+          min-range="123"
+          max-range="987"
+          number-of-legend-items-to-show="6"
+          hide-legend
+          hide-label
+        />
+      </div>
+    </div>
+  </body>
+</html>
