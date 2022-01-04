@@ -1,0 +1,55 @@
+body {
+  font-family: Avenir, Helvetica, sans-serif;
+  background-color: whitesmoke;
+  color: #363636;
+}
+
+h1 {
+  color: tomato;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+  text-align: center;
+  color: darkslategrey;
+}
+
+/* Giving a better a11y visual focus indication for links and buttons */
+a,
+button {
+  margin: -0.25em;
+  padding: 0.25em;
+}
+
+.range-selector__container > div {
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 1rem;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+  min-height: 150px;
+  padding: 0 1em 1em 1em;
+}
+
+.range-selector__container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+code {
+  font-weight: bold;
+  color: red;
+}
