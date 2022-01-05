@@ -138,6 +138,8 @@ They are to used for accessibility and screen readers and **if you want this to 
 | :------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------: |
 | `id`                             | string  | If provided when the range is changed the range-changed event will include the ID of the slider (useful when there are more than one)                                                      |                          `null`                          |
 | `number-of-legend-items-to-show` | int     | Number of legend items to show below the slider                                                                                                                                            |                           `2`                            |
+| `min-label`                      | string  | Accessibility label for the minimum value label                                                                                                                                            |                       `'Minimum'`                        |
+| `max-label`                      | string  | Accessibility label for the maximium value label                                                                                                                                           |                       `'Maximum'`                        |
 
 ## Contributions
 
