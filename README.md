@@ -144,6 +144,7 @@ They are to used for accessibility and screen readers and **if you want this to 
 | `hide-label`                     | boolean | Whether or not to hide the label. Simply add the `hide-label` attribute for this to work (truth is inferred by the presence of this attribute existing)                                    |                         `false`                          |
 | `hide-legend`                    | boolean | Whether or not to hide the legend. Simply add the `hide-legend` attribute for this to work (truth is inferred by the presence of this attribute existing)                                  |                         `false`                          |
 | `slider-color`                   | string  | An awesome[red]sauce color (pun intended)                                                                                                                                                  |                         `tomato`                         |
+| `circle-color`                   | string  | The color of the slider circles                                                                                                                                                            |                    `#ffffff` (white)                     |
 
 ## Contributions
 
