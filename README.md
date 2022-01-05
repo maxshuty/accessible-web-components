@@ -140,6 +140,7 @@ They are to used for accessibility and screen readers and **if you want this to 
 | `number-of-legend-items-to-show` | int     | Number of legend items to show below the slider                                                                                                                                            |                           `2`                            |
 | `min-label`                      | string  | Accessibility label for the minimum value label                                                                                                                                            |                       `'Minimum'`                        |
 | `max-label`                      | string  | Accessibility label for the maximium value label                                                                                                                                           |                       `'Maximum'`                        |
+| `event-name-to-emit-on-change`   | string  | The event name that will be emitted when the user adjusts the range. I.e. window.addEventListener('my-custom-range-changed-event-name-here', () => doStuff()                               |                     `range-changed`                      |
 
 ## Contributions
 
