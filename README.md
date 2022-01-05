@@ -127,10 +127,10 @@ They are to used for accessibility and screen readers and **if you want this to 
 
 ## Required props:
 
-| Parameter   | Type | Values                           | Required |
-| :---------- | :--- | :------------------------------- | :------: |
-| `min-range` | int  | The minimum range for the slider |   Yes    |
-| `max-range` | int  | The maximum range for the slider |   Yes    |
+| Parameter   | Alt Name | Type | Values                           | Required |
+| :---------- | :------- |:---  | :------------------------------- | :------: |
+| `min-range` | `min`    | int  | The minimum range for the slider |   Yes    |
+| `max-range` | `max`    | int  | The maximum range for the slider |   Yes    |
 
 ## Non-required props and their defaults:
 
