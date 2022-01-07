@@ -150,7 +150,7 @@ They are to used for accessibility and screen readers and **if you want this to 
 
 ## Contributions
 
-Contributions are always welcome. Please fork this repo and submit a PR.
+Contributions are always welcome! Simply fork this repo and submit a PR.
 
 Found a bug or want a new feature? Create an issue or a feature request [here](https://github.com/maxshuty/accessible-web-components/issues).
 
