@@ -146,6 +146,7 @@ They are to used for accessibility and screen readers and **if you want this to 
 | `slider-color`                   | string  | An awesome[red]sauce color (pun intended)                                                                                                                                                  |                         `tomato`                         |
 | `circle-color`                   | string  | The color of the slider circles                                                                                                                                                            |                    `#ffffff` (white)                     |
 | `circle-border-color`            | string  | The border color of the slider circles                                                                                                                                                     |                     `#8b8b8b` (grey)                     |
+| `circle-focus-border-color`      | string  | The focus border color of the slider circles (for accessibility). This should have proper contrast with the other colors you have selected or else it may fail accessibility requirements. | `#0074cc` (Similar to Chromes default blue focus border) |
 
 ## Contributions
 
