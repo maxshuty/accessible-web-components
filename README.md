@@ -38,7 +38,7 @@ window.addEventListener('range-changed', (e) => {
 
 ## Alternatively you can easily customize colors and other options like these examples:
 
-- Using an ID using `id` so that it will be emitted on the `range-changed` event and using `min-label` and `max-label` for accessibility. Also using `number-of-legend-items-to-show` to show 6 values below the slider:
+Using an ID using `id` so that it will be emitted on the `range-changed` event and using `min-label` and `max-label` for accessibility. Also using `number-of-legend-items-to-show` to show 6 values below the slider:
 
 ```
 <range-selector
