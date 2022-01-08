@@ -65,9 +65,9 @@ use the shorthand `min` & `max` instead of `min-range` and `max-range`:
 />
 ```
 
-- Using a custom range changed event name using `event-name-to-emit-on-change` so that your consumer
-  of this component can listen for this specific event name when
-  the user has adjusted the ranges:
+Using a custom range changed event name using `event-name-to-emit-on-change` so that your consumer
+of this component can listen for this specific event name when
+the user has adjusted the ranges:
 
 ```
 <range-selector
