@@ -51,8 +51,8 @@ Using an ID using `id` so that it will be emitted on the `range-changed` event a
 />
 ```
 
-- You can adjust the number of legend items to show and you can also
-  use the shorthand `min` & `max` instead of `min-range` and `max-range`:
+You can adjust the number of legend items to show and you can also
+use the shorthand `min` & `max` instead of `min-range` and `max-range`:
 
 ```
 <range-selector
