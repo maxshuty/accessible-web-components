@@ -12,6 +12,7 @@ If you notice any issues at all regarding accessibility of this component we imp
 
 ## Demo
 View the demo with many examples [here](https://maxshuty.github.io/accessible-web-components/)
+
 ## Usage is super simple:
 
 Use the minified file from this repo and insert it as a script tag on your page:
