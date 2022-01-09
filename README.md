@@ -80,7 +80,7 @@ the user has adjusted the ranges:
   />
 ```
 
-- Hiding the legend using `hide-legend`:
+Hiding the legend using `hide-legend`:
 
 ```
 <range-selector
