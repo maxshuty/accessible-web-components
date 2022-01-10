@@ -6,10 +6,12 @@
 // Object containing common CSS styles so we can change them in once place
 const cssHelpers = Object.freeze({
   sliderBackgroundColor: 'tomato',
+  sliderBorderColor: '#8b8b8b',
+  sliderBorderRadius: '4px',
   sliderCircleSize: 20,
   sliderCircleBackgroundColor: '#ffffff',
-  sliderCircleBorderColor: '#8b8b8b',
   sliderCircleFocusColor: '#0074cc',
+  sliderCommonSize: '0.5em',
 });
 
 const constants = Object.freeze({
@@ -49,19 +51,23 @@ template.innerHTML = `
           font-size: small;
         }
           
-        .min-max-slider > input {
+        .min-max-slider > .range-input {
           --sliderColor: ${cssHelpers.sliderCircleBackgroundColor};
-          --sliderBorderColor: ${cssHelpers.sliderCircleBorderColor};
+          --sliderBorderColor: ${cssHelpers.sliderBorderColor};
           --sliderFocusBorderColor: ${cssHelpers.sliderCircleFocusColor};
           cursor: pointer;
           position: absolute;
           -webkit-appearance: none;
           outline: none !important;
           background: transparent;
-          background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${cssHelpers.sliderBackgroundColor} 30%, ${cssHelpers.sliderBackgroundColor} 60%, transparent 60%, transparent 100%);
+          background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${
+            cssHelpers.sliderBackgroundColor
+          } 30%, ${
+  cssHelpers.sliderBackgroundColor
+} 60%, transparent 60%, transparent 100%);
         }
           
-        .min-max-slider > input::-webkit-slider-thumb {
+        .min-max-slider > .range-input::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
           width: ${cssHelpers.sliderCircleSize}px;
@@ -72,7 +78,7 @@ template.innerHTML = `
           border-radius: 100%;
         }
         
-        .min-max-slider > input::-moz-range-thumb {
+        .min-max-slider > .range-input::-moz-range-thumb {
           width: ${cssHelpers.sliderCircleSize}px;
           height: ${cssHelpers.sliderCircleSize}px;
           background-color: var(--sliderColor);
@@ -81,17 +87,17 @@ template.innerHTML = `
           border-radius: 100%;
         } 
           
-        .min-max-slider > input::-webkit-slider-runnable-track,  
-        .min-max-slider > input::-moz-range-track {
+        .min-max-slider > .range-input::-webkit-slider-runnable-track,  
+        .min-max-slider > .range-input::-moz-range-track {
           cursor: pointer;
         }
           
-        .min-max-slider > input:focus::-webkit-slider-thumb {
+        .min-max-slider > .range-input:focus::-webkit-slider-thumb {
           /* Accessible border on focus */
           border: 2px solid var(--sliderFocusBorderColor);
         }
 
-        .min-max-slider > input:focus::-moz-range-thumb {
+        .min-max-slider > .range-input:focus::-moz-range-thumb {
             /* Accessible border on focus */
             border: 2px solid var(--sliderFocusBorderColor);
         }
@@ -103,19 +109,24 @@ template.innerHTML = `
         }
       
         span.value.upper::before {
-          content: "- ";
+          content: "${'\\FE63'}";
           white-space: pre;
           display: inline-block;
-          margin-left: 0.4em;
-        }     
+          padding: 0 ${cssHelpers.sliderCommonSize};
+        }
+
+        .range-input-dash-icon {
+          padding: 0 ${cssHelpers.sliderCommonSize};
+        }
+
+        .range-input-label {
+            border: 1px solid ${cssHelpers.sliderBorderColor};
+            border-radius: ${cssHelpers.sliderBorderRadius};
+            padding: ${cssHelpers.sliderCommonSize};
+        }
       </style>
       
-      <div id="${constants.SLIDER_ID}" class="min-max-slider">
-        <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
-        <input id="${constants.MIN}" name="${constants.MIN}" type="range" step="1" />
-        <label id="${constants.MAX_LABEL_ID}" for="${constants.MAX}">Maximum</label>
-        <input id="${constants.MAX}" name="${constants.MAX}" type="range" step="1" />
-      </div>
+      <div id="${constants.SLIDER_ID}" class="min-max-slider"></div>
   `;
 
 class SimpleRange extends HTMLElement {
@@ -134,7 +145,7 @@ class SimpleRange extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['min-label', 'max-label', 'min-range', 'max-range'];
+    return ['min-label', 'max-label', 'min-range', 'max-range', 'min', 'max'];
   }
 
   get sliderId() {
@@ -182,6 +193,17 @@ class SimpleRange extends HTMLElement {
     return this.hasAttribute('hide-label');
   }
 
+  get inputsForLabels() {
+    // todo readme
+    // todo readme
+    // todo readme
+    // todo readme
+    // todo readme
+    // todo readme
+    // todo readme
+    return this.hasAttribute('inputs-for-labels');
+  }
+
   get sliderColor() {
     return this.getAttribute('slider-color');
   }
@@ -212,16 +234,44 @@ class SimpleRange extends HTMLElement {
           return;
         }
 
-        this.getEl(constants.MIN_LABEL_ID).innerText = newValue;
+        const minLabel = this.getEl(constants.MIN_LABEL_ID);
+        if (!minLabel) {
+          return;
+        }
+
+        minLabel.innerText = newValue;
         break;
       case 'max-label':
         if (!newValue) {
           return;
         }
 
-        this.getEl(constants.MAX_LABEL_ID).innerText = newValue;
+        const maxLabel = this.getEl(constants.MAX_LABEL_ID);
+        if (!maxLabel) {
+          return;
+        }
+
+        maxLabel.innerText = newValue;
+        break;
+      case 'min-range':
+      case 'min':
+        if (isNaN(newValue) || oldValue === newValue) {
+          return;
+        }
+
+        this.minRange = newValue;
+        break;
+      case 'max-range':
+      case 'max':
+        if (isNaN(newValue) || oldValue === newValue) {
+          return;
+        }
+
+        this.maxRange = newValue;
         break;
     }
+
+    this.init();
   }
 
   connectedCallback() {
@@ -274,9 +324,10 @@ class SimpleRange extends HTMLElement {
 
   // Setting the initial state of the application
   init() {
-    this.setupColors();
-
     const slider = this.getEl(constants.SLIDER_ID);
+
+    this.setInitialSliderState(slider);
+    this.setupColors();
 
     const min = slider.querySelector(`#${constants.MIN}`);
     const max = slider.querySelector(`#${constants.MAX}`);
@@ -312,6 +363,18 @@ class SimpleRange extends HTMLElement {
       constants.RANGE_STOPPED_EVENTS,
       this.emitRangeSelection
     );
+  }
+
+  // Sets the initial inner HTML of the slider. This is necessary because the init()
+  // function appends other elements downstream and if we don't reset it then things
+  // will end up getting duplicated
+  setInitialSliderState(slider) {
+    slider.innerHTML = `
+        <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
+        <input id="${constants.MIN}" class="range-input" name="${constants.MIN}" type="range" step="1" />
+        <label id="${constants.MAX_LABEL_ID}" for="${constants.MAX}">Maximum</label>
+        <input id="${constants.MAX}" class="range-input" name="${constants.MAX}" type="range" step="1" />
+      `;
   }
 
   // Emits new custom event for min-range-changed or max-range-changed so
@@ -391,8 +454,13 @@ class SimpleRange extends HTMLElement {
     if (!this.hideLabel) {
       const upper = slider.querySelector('.upper');
 
-      lower.innerHTML = min.getAttribute('data-value');
-      upper.innerHTML = max.getAttribute('data-value');
+      if (this.inputsForLabels) {
+        lower.value = min.getAttribute('data-value');
+        upper.value = max.getAttribute('data-value');
+      } else {
+        lower.innerHTML = min.getAttribute('data-value');
+        upper.innerHTML = max.getAttribute('data-value');
+      }
     }
   }
 
@@ -413,7 +481,7 @@ class SimpleRange extends HTMLElement {
 
   setupColors() {
     const elements = this.shadowRoot.querySelectorAll(
-      '.min-max-slider > input'
+      '.min-max-slider > .range-input'
     );
     elements.forEach((el) => {
       if (this.sliderColor) {
@@ -469,16 +537,47 @@ class SimpleRange extends HTMLElement {
       return;
     }
 
-    let lower = document.createElement('span');
-    let upper = document.createElement('span');
+    const labelType = this.inputsForLabels ? 'input' : 'span';
+    let lower = document.createElement(labelType);
+    let upper = document.createElement(labelType);
 
-    lower.classList.add('lower', 'value');
-    upper.classList.add('upper', 'value');
-    lower.appendChild(document.createTextNode(this.minRange));
-    upper.appendChild(document.createTextNode(this.maxRange));
+    lower.classList.add(`range-${labelType}-label`, 'lower', 'value');
+    upper.classList.add(`range-${labelType}-label`, 'upper', 'value');
+
+    if (this.inputsForLabels) {
+      lower.value = this.minRange;
+      upper.value = this.maxRange;
+
+      lower.setAttribute('type', 'number');
+      lower.setAttribute('min', this.minRange);
+      lower.setAttribute('max', this.maxRange);
+
+      upper.setAttribute('type', 'number');
+      upper.setAttribute('min', this.minRange);
+      upper.setAttribute('max', this.maxRange);
+
+      lower.addEventListener('input', this.onRangeInput);asdf
+      upper.addEventListener('input', this.onRangeInput); asdfasdf
+    } else {
+      lower.appendChild(document.createTextNode(this.minRange));
+      upper.appendChild(document.createTextNode(this.maxRange));
+    }
 
     slider.insertBefore(lower, min.previousElementSibling);
     slider.insertBefore(upper, min.previousElementSibling);
+
+    if (this.inputsForLabels) {
+      // Adding a "-" symbol beyween the range inputs since you cannot do
+      // this via CSS pseudo (before/after) selectors on an input element
+      let dashIcon = document.createElement('i');
+      dashIcon.classList.add('range-input-dash-icon');
+      dashIcon.setAttribute('aria-hidden', true);
+      dashIcon.innerHTML = '&#65123';
+      slider.insertBefore(
+        dashIcon,
+        min.previousElementSibling.previousElementSibling
+      );
+    }
   }
 }
 
