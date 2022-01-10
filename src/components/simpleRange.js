@@ -194,13 +194,6 @@ class SimpleRange extends HTMLElement {
   }
 
   get inputsForLabels() {
-    // todo readme
-    // todo readme
-    // todo readme
-    // todo readme
-    // todo readme
-    // todo readme
-    // todo readme
     return this.hasAttribute('inputs-for-labels');
   }
 
