@@ -20,8 +20,14 @@ h3 {
 h2,
 h3 {
   margin-top: 0;
-  text-align: center;
   color: darkslategrey;
+}
+
+h1,
+h2,
+h3,
+.range-selector__urlsContainer--centered {
+  text-align: center;
 }
 
 /* Giving a better a11y visual focus indication for links and buttons */
