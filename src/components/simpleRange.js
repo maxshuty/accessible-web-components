@@ -22,6 +22,8 @@ const constants = Object.freeze({
   MAX_LABEL_ID: `maxLabel`,
   RANGE_STOPPED_EVENTS: ['mouseup', 'touchend', 'keyup'],
   CUSTOM_EVENT_TO_EMIT_NAME: 'range-changed',
+  RANGE_INPUT_DATA_LABEL_MIN: 'data-range-input-label-min',
+  RANGE_INPUT_DATA_LABEL_MAX: 'data-range-input-label-max',
 });
 
 const template = document.createElement('template');
