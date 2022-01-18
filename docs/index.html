@@ -18,6 +18,8 @@
         (event) => console.log(
           `Range has changed!
            | Slider ID (if slider has an id attribute, else it will be null): ${event.detail.sliderId}
+           | Min Range selection: ${event.detail.minRangeValue.toString()} 
+           | Max Range selection: ${event.detail.maxRangeValue}`
       );
     </script>
   </head>
