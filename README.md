@@ -152,6 +152,7 @@ They are to used for accessibility and screen readers and **if you want this to 
 
 ## Resetting the slider to its initial state
 In some circumstances you may want to reset the slider to it's initial state. This can easily be achieved by simply emitting a `range-changed` event. 
+
 Here is how that can be accomplished using a `CustomEvent`:
 ```
 ## Contributions
