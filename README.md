@@ -155,6 +155,8 @@ In some circumstances you may want to reset the slider to it's initial state. Th
 
 Here is how that can be accomplished using a `CustomEvent`:
 ```
+window.dispatchEvent(new CustomEvent('range-reset', {
+      bubbles: true,
 ## Contributions
 
 Contributions are always welcome! Simply fork this repo and submit a PR.
