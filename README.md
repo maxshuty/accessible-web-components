@@ -157,6 +157,13 @@ Here is how that can be accomplished using a `CustomEvent`:
 ```
 window.dispatchEvent(new CustomEvent('range-reset', {
       bubbles: true,
+      composed: true, 
+      detail: { sliderId: 'sliderIdHere' }
+    }
+  )
+);
+```
+
 ## Contributions
 
 Contributions are always welcome! Simply fork this repo and submit a PR.
