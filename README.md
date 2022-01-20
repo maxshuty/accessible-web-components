@@ -164,6 +164,8 @@ window.dispatchEvent(new CustomEvent('range-reset', {
 );
 ```
 
+**NOTE:** If you do not provide a `sliderId` in the `event.detail` it will reset **all** sliders on the page if you have multiple of them. If you provide a `sliderId` then it will only reset the specific slider that you specify in the `sliderId`.
+
 ## Contributions
 
 Contributions are always welcome! Simply fork this repo and submit a PR.
