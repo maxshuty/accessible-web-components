@@ -30,7 +30,7 @@ gulp.task('js-minify', function () {
     )
     .pipe(
       headerComment(
-        'Max Poshusta | v1.0.3 | MIT License | https://github.com/maxshuty/accessible-web-components | https://www.linkedin.com/in/maxposhusta'
+        'Max Poshusta | v1.0.4 | MIT License | https://github.com/maxshuty/accessible-web-components | https://www.linkedin.com/in/maxposhusta'
       )
     )
     .pipe(gulp.dest('./dist'))
