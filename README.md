@@ -11,6 +11,7 @@ This component was designed with accessibility in mind, however it by no means g
 If you notice any issues at all regarding accessibility of this component we implore you to [submit an issue](https://github.com/maxshuty/accessible-web-components/issues).
 
 ## Demo
+
 View the demo with many examples [here](https://maxshuty.github.io/accessible-web-components/)
 
 ## Usage is super simple:
