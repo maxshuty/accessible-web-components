@@ -116,13 +116,13 @@ the user has adjusted the ranges:
 
 ```
 <range-selector
-    min-range="1092"
-    max-range="2022"
-    min-label="i18nMinLabel"
-    max-label="i18nMaxLabel"
-    id="yearRangeSelector"
-    event-name-to-emit-on-change="my-custom-range-changed-event"
-  />
+  min-range="1092"
+  max-range="2022"
+  min-label="i18nMinLabel"
+  max-label="i18nMaxLabel"
+  id="yearRangeSelector"
+  event-name-to-emit-on-change="my-custom-range-changed-event"
+/>
 ```
 
 Hiding the legend using `hide-legend`:
