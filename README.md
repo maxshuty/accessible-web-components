@@ -110,6 +110,19 @@ use the shorthand `min` & `max` instead of `min-range` and `max-range`:
 />
 ```
 
+You can set the preset values for the min and max easily using `preset-min` and `preset-max`:
+```
+<range-selector
+  min-label="Minimum"
+  max-label="Maximum"
+  min="99"
+  max="999"
+  preset-min="350"
+  preset-max="800"
+  number-of-legend-items-to-show="4"
+/>
+```
+
 Using a custom range changed event name using `event-name-to-emit-on-change` so that your consumer
 of this component can listen for this specific event name when
 the user has adjusted the ranges:
