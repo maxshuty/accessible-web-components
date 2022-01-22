@@ -184,46 +184,6 @@ The `min-label` and `max-label`'s are attributes so that they can be translated 
 
 They are to used for accessibility and screen readers and **if you want this to be accessible then it is mandatory to set these labels**, they will default to _"Minimum"_ and _"Maximum"_ in English only!
 
-## Required props:
-
-| Parameter   | Alt Name | Type | Values                           | Required |
-| :---------- | :------- |:---  | :------------------------------- | :------: |
-| `min-range` | `min`    | int  | The minimum range for the slider |   Yes    |
-| `max-range` | `max`    | int  | The maximum range for the slider |   Yes    |
-
-## Non-required props and their defaults:
-
-| Parameter                        | Type    | Values                                                                                                                                                                                     |                         Default                          |
-| :------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------: |
-| `id`                             | string  | If provided when the range is changed the range-changed event will include the ID of the slider (useful when there are more than one)                                                      |                          `null`                          |
-| `number-of-legend-items-to-show` | int     | Number of legend items to show below the slider                                                                                                                                            |                           `2`                            |
-| `min-label`                      | string  | Accessibility label for the minimum value label                                                                                                                                            |                       `'Minimum'`                        |
-| `max-label`                      | string  | Accessibility label for the maximium value label                                                                                                                                           |                       `'Maximum'`                        |
-| `event-name-to-emit-on-change`   | string  | The event name that will be emitted when the user adjusts the range. I.e. window.addEventListener('my-custom-range-changed-event-name-here', () => doStuff()                               |                     `range-changed`                      |
-| `inputs-for-labels`              | boolean | Whether or not to use inputs instead of labels so that the user can manually type in the range. Simply add the `inputs-for-labels` attribute for this to work (truth is inferred by the presence of this attribute existing)                                                                                                                                                           |                    `false`                 |
-| `hide-label`                     | boolean | Whether or not to hide the label. Simply add the `hide-label` attribute for this to work (truth is inferred by the presence of this attribute existing)                                    |                         `false`                          |
-| `hide-legend`                    | boolean | Whether or not to hide the legend. Simply add the `hide-legend` attribute for this to work (truth is inferred by the presence of this attribute existing)                                  |                         `false`                          |
-| `slider-color`                   | string  | An awesome[red]sauce color (pun intended)                                                                                                                                                  |                         `tomato`                         |
-| `circle-color`                   | string  | The color of the slider circles                                                                                                                                                            |                    `#ffffff` (white)                     |
-| `circle-border-color`            | string  | The border color of the slider circles                                                                                                                                                     |                     `#8b8b8b` (grey)                     |
-| `circle-focus-border-color`      | string  | The focus border color of the slider circles (for accessibility). This should have proper contrast with the other colors you have selected or else it may fail accessibility requirements. | `#0074cc` (Similar to Chromes default blue focus border) |
-
-## Resetting the slider to its initial state
-In some circumstances you may want to reset the slider to it's initial state. This can easily be achieved by simply emitting a `range-changed` event. 
-
-Here is how that can be accomplished using a `CustomEvent`:
-```
-window.dispatchEvent(new CustomEvent('range-reset', {
-      bubbles: true,
-      composed: true, 
-      detail: { sliderId: 'sliderIdHere' }
-    }
-  )
-);
-```
-
-**NOTE:** If you do not provide a `sliderId` in the `event.detail` it will reset **all** sliders on the page if you have multiple of them. If you provide a `sliderId` then it will only reset the specific slider that you specify in the `sliderId`.
-
 ## Contributions
 
 Contributions are always welcome! Simply fork this repo and submit a PR.
