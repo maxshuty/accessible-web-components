@@ -67,37 +67,10 @@ template.innerHTML = `
           } 30%, ${
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
-        }
-          
-        .min-max-slider > .range-input::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          width: ${cssHelpers.sliderCircleSize}px;
-          height: ${cssHelpers.sliderCircleSize}px;
-          background-color: var(--sliderColor);
-          cursor: pointer;
-          border: 1px solid var(--sliderBorderColor);
-          border-radius: 100%;
-        }
-        
-        .min-max-slider > .range-input::-moz-range-thumb {
-          width: ${cssHelpers.sliderCircleSize}px;
-          height: ${cssHelpers.sliderCircleSize}px;
-          background-color: var(--sliderColor);
-          cursor: pointer;
-          border: 1px solid var(--sliderBorderColor);
-          border-radius: 100%;
-        } 
-          
+      .min-max-slider > .range-input::-webkit-slider-runnable-track,  
         .min-max-slider > .range-input::-webkit-slider-runnable-track,  
-        .min-max-slider > .range-input::-moz-range-track {
-          cursor: pointer;
-        }
-          
-        .min-max-slider > .range-input:focus::-webkit-slider-thumb {
-          /* Accessible border on focus */
-          border: 2px solid var(--sliderFocusBorderColor);
-        }
+      .min-max-slider > .range-input::-webkit-slider-runnable-track,  
+      .min-max-slider > .range-input::-moz-range-track {
 
         .min-max-slider > .range-input:focus::-moz-range-thumb {
             /* Accessible border on focus */
