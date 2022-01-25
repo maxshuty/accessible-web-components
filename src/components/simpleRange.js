@@ -28,43 +28,12 @@ const constants = Object.freeze({
 
 const template = document.createElement('template');
 template.innerHTML = `
-      <style>
-        .min-max-slider { 
-          position: relative;
-          width: 100%;
-          text-align: center;
-        }
-           
-        .min-max-slider > label {
-          position: absolute;
-          left: -10000px;
-          top: auto;
-          width: 1px;
-          height: 1px;
-          overflow: hidden;
-        }
-          
-        .min-max-slider > .legend {
-          display: flex;
-          justify-content: space-between;
-        }
-          
-        .min-max-slider > .legend > * {
-          font-size: small;
-        }
-          
-        .min-max-slider > .range-input {
-          --sliderColor: ${cssHelpers.sliderCircleBackgroundColor};
-          --sliderBorderColor: ${cssHelpers.sliderBorderColor};
-          --sliderFocusBorderColor: ${cssHelpers.sliderCircleFocusColor};
-          cursor: pointer;
-          position: absolute;
-          -webkit-appearance: none;
-          outline: none !important;
-          background: transparent;
-          background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${
-            cssHelpers.sliderBackgroundColor
-          } 30%, ${
+    <style>
+      .min-max-slider { 
+        position: relative;
+        width: 100%;
+        text-align: center;
+      }
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
