@@ -1,5 +1,5 @@
 /*
-  SimpleRange v1.0.1 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
+  SimpleRange v1.0.4 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
   By Max Poshusta | https://github.com/maxshuty | https://www.linkedin.com/in/maxposhusta/
 */
 
