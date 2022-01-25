@@ -43,6 +43,7 @@ template.innerHTML = `
         height: 1px;
         overflow: hidden;
       }
+        
       .min-max-slider > .legend {
         display: flex;
   cssHelpers.sliderBackgroundColor
