@@ -34,6 +34,15 @@ template.innerHTML = `
         width: 100%;
         text-align: center;
       }
+         
+      .min-max-slider > label {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
