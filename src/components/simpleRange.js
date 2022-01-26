@@ -48,6 +48,8 @@ template.innerHTML = `
         display: flex;
         justify-content: space-between;
       }
+        
+      .min-max-slider > .legend > * {
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
