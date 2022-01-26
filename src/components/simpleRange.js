@@ -50,6 +50,8 @@ template.innerHTML = `
       }
         
       .min-max-slider > .legend > * {
+        font-size: small;
+      }
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
