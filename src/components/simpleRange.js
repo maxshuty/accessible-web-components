@@ -46,6 +46,8 @@ template.innerHTML = `
         
       .min-max-slider > .legend {
         display: flex;
+        justify-content: space-between;
+      }
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
