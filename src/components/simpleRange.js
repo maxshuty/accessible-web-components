@@ -52,6 +52,8 @@ template.innerHTML = `
       .min-max-slider > .legend > * {
         font-size: small;
       }
+        
+      .min-max-slider > .range-input {
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
