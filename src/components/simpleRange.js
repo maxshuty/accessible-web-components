@@ -55,6 +55,7 @@ template.innerHTML = `
         
       .min-max-slider > .range-input {
         --sliderColor: ${cssHelpers.sliderCircleBackgroundColor};
+        --sliderBorderColor: ${cssHelpers.sliderBorderColor};
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
