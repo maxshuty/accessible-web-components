@@ -57,6 +57,7 @@ template.innerHTML = `
         --sliderColor: ${cssHelpers.sliderCircleBackgroundColor};
         --sliderBorderColor: ${cssHelpers.sliderBorderColor};
         --sliderFocusBorderColor: ${cssHelpers.sliderCircleFocusColor};
+        cursor: pointer;
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
