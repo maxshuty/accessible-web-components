@@ -93,7 +93,7 @@ template.innerHTML = `
       .min-max-slider > .range-input::-moz-range-track {
         cursor: pointer;
       }
-
+        
         .min-max-slider > .range-input:focus::-moz-range-thumb {
             /* Accessible border on focus */
             border: 2px solid var(--sliderFocusBorderColor);
