@@ -59,6 +59,7 @@ template.innerHTML = `
         --sliderFocusBorderColor: ${cssHelpers.sliderCircleFocusColor};
         cursor: pointer;
         position: absolute;
+        -webkit-appearance: none;
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
