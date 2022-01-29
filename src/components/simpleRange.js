@@ -60,6 +60,7 @@ template.innerHTML = `
         cursor: pointer;
         position: absolute;
         -webkit-appearance: none;
+        outline: none !important;
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
