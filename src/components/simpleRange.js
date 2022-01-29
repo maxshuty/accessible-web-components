@@ -62,6 +62,9 @@ template.innerHTML = `
         -webkit-appearance: none;
         outline: none !important;
         background: transparent;
+        background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${
+          cssHelpers.sliderBackgroundColor
+        } 30%, ${
   cssHelpers.sliderBackgroundColor
 } 60%, transparent 60%, transparent 100%);
       }
