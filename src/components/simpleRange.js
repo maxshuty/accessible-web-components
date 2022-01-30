@@ -94,6 +94,7 @@ template.innerHTML = `
         cursor: pointer;
       }
         
+      .min-max-slider > .range-input:focus::-webkit-slider-thumb {
         .min-max-slider > .range-input:focus::-moz-range-thumb {
             /* Accessible border on focus */
             border: 2px solid var(--sliderFocusBorderColor);
