@@ -100,6 +100,7 @@ template.innerHTML = `
       }
 
       .min-max-slider > .range-input:focus::-moz-range-thumb {
+          /* Accessible border on focus */
 
         .range-input-dash-icon {
           padding: 0 ${cssHelpers.sliderCommonSize};
