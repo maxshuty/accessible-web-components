@@ -99,23 +99,7 @@ template.innerHTML = `
         border: 2px solid var(--sliderFocusBorderColor);
       }
 
-        .min-max-slider > .range-input:focus::-moz-range-thumb {
-            /* Accessible border on focus */
-            border: 2px solid var(--sliderFocusBorderColor);
-        }
-          
-        span.value {
-          height: 1.7em;
-          font-weight: bold;
-          display: inline-block;
-        }
-      
-        span.value.upper::before {
-          content: "${'\\FE63'}";
-          white-space: pre;
-          display: inline-block;
-          padding: 0 ${cssHelpers.sliderCommonSize};
-        }
+      .min-max-slider > .range-input:focus::-moz-range-thumb {
 
         .range-input-dash-icon {
           padding: 0 ${cssHelpers.sliderCommonSize};
