@@ -110,6 +110,7 @@ template.innerHTML = `
         display: inline-block;
       }
     
+      span.value.upper::before {
         .range-input-dash-icon {
           padding: 0 ${cssHelpers.sliderCommonSize};
         }
