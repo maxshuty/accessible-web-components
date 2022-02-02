@@ -104,6 +104,7 @@ template.innerHTML = `
           border: 2px solid var(--sliderFocusBorderColor);
       }
         
+      span.value {
         .range-input-dash-icon {
           padding: 0 ${cssHelpers.sliderCommonSize};
         }
