@@ -105,6 +105,7 @@ template.innerHTML = `
       }
         
       span.value {
+        height: 1.7em;
         .range-input-dash-icon {
           padding: 0 ${cssHelpers.sliderCommonSize};
         }
