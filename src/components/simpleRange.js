@@ -117,9 +117,7 @@ template.innerHTML = `
         padding: 0 ${cssHelpers.sliderCommonSize};
       }
 
-        .range-input-dash-icon {
-          padding: 0 ${cssHelpers.sliderCommonSize};
-        }
+      .range-input-dash-icon {
 
         .range-input-label {
             border: 1px solid ${cssHelpers.sliderBorderColor};
