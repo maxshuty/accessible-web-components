@@ -121,15 +121,7 @@ template.innerHTML = `
         padding: 0 ${cssHelpers.sliderCommonSize};
       }
 
-        .range-input-label {
-            border: 1px solid ${cssHelpers.sliderBorderColor};
-            border-radius: ${cssHelpers.sliderBorderRadius};
-            padding: ${cssHelpers.sliderCommonSize};
-        }
-      </style>
-      
-      <div id="${constants.SLIDER_ID}" class="min-max-slider"></div>
-  `;
+    
 
 class SimpleRange extends HTMLElement {
   constructor() {
