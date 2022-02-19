@@ -114,6 +114,7 @@ template.innerHTML = `
         content: "${'\\FE63'}";
         white-space: pre;
         display: inline-block;
+        padding: 0 ${cssHelpers.sliderCommonSize};
         .range-input-dash-icon {
           padding: 0 ${cssHelpers.sliderCommonSize};
         }
