@@ -121,6 +121,7 @@ template.innerHTML = `
         padding: 0 ${cssHelpers.sliderCommonSize};
       }
 
+      .range-input-label {
     
 
 class SimpleRange extends HTMLElement {
