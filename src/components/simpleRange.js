@@ -125,6 +125,7 @@ template.innerHTML = `
           border: 1px solid ${cssHelpers.sliderBorderColor};
           border-radius: ${cssHelpers.sliderBorderRadius};
           padding: ${cssHelpers.sliderCommonSize};
+      }
     
 
 class SimpleRange extends HTMLElement {
