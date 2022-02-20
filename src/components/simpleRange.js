@@ -122,6 +122,7 @@ template.innerHTML = `
       }
 
       .range-input-label {
+          border: 1px solid ${cssHelpers.sliderBorderColor};
     
 
 class SimpleRange extends HTMLElement {
