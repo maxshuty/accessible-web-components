@@ -123,6 +123,7 @@ template.innerHTML = `
 
       .range-input-label {
           border: 1px solid ${cssHelpers.sliderBorderColor};
+          border-radius: ${cssHelpers.sliderBorderRadius};
     
 
 class SimpleRange extends HTMLElement {
