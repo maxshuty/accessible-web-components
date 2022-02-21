@@ -146,10 +146,6 @@ class SimpleRange extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
-  static get observedAttributes() {
-    return ['min-label', 'max-label', 'min-range', 'max-range', 'min', 'max'];
-  }
-
   get sliderId() {
     return this.getAttribute('id');
   }
