@@ -129,6 +129,7 @@ template.innerHTML = `
     </style>
     
     <div id="${constants.SLIDER_ID}" class="min-max-slider"></div>
+`;
 
 class SimpleRange extends HTMLElement {
   constructor() {
