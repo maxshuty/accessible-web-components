@@ -181,6 +181,7 @@ class SimpleRange extends HTMLElement {
     this.setAttribute('preset-min', presetMinVal);
   }
 
+  get presetMax() {
   get numberOfLegendItemsToShow() {
     // If the consumer has specified the number of items to show and the number is at least 2
     // then we return that number, else we return 2 as there always needs to be at least 2
