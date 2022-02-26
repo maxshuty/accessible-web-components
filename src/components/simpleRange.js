@@ -234,6 +234,7 @@ class SimpleRange extends HTMLElement {
 
   static get observedAttributes() {
     return [
+      'min-label',
     ];
   }
 
