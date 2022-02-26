@@ -233,6 +233,7 @@ class SimpleRange extends HTMLElement {
   }
 
   static get observedAttributes() {
+    return [
   }
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
