@@ -236,6 +236,7 @@ class SimpleRange extends HTMLElement {
     return [
     ];
   }
+
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
       case 'min-label':
