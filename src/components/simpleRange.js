@@ -236,6 +236,7 @@ class SimpleRange extends HTMLElement {
     return [
       'min-label',
       'max-label',
+      'min-range',
     ];
   }
 
