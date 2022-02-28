@@ -240,6 +240,7 @@ class SimpleRange extends HTMLElement {
       'max-range',
       'min',
       'max',
+      'preset-min',
     ];
   }
 
