@@ -241,6 +241,7 @@ class SimpleRange extends HTMLElement {
       'min',
       'max',
       'preset-min',
+      'preset-max',
     ];
   }
 
