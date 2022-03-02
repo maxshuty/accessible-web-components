@@ -294,6 +294,7 @@ class SimpleRange extends HTMLElement {
 
         this.presetMin = newValue;
         break;
+      case 'preset-max':
     }
 
     this.init();
