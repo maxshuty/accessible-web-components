@@ -291,6 +291,7 @@ class SimpleRange extends HTMLElement {
         if (isNaN(newValue) || oldValue === newValue) {
           return;
         }
+        this.presetMin = newValue;
     }
 
     this.init();
