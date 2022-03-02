@@ -293,6 +293,7 @@ class SimpleRange extends HTMLElement {
         }
 
         this.presetMin = newValue;
+        break;
     }
 
     this.init();
