@@ -297,7 +297,7 @@ class SimpleRange extends HTMLElement {
       case 'preset-max':
         if (isNaN(newValue) || oldValue === newValue) {
           return;
-    }
+        }
 
     this.init();
   }
