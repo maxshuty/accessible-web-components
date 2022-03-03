@@ -295,6 +295,7 @@ class SimpleRange extends HTMLElement {
         this.presetMin = newValue;
         break;
       case 'preset-max':
+        if (isNaN(newValue) || oldValue === newValue) {
     }
 
     this.init();
