@@ -299,6 +299,7 @@ class SimpleRange extends HTMLElement {
           return;
         }
 
+        this.presetMax = newValue;
     this.init();
   }
 
