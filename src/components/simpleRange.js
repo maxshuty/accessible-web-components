@@ -331,6 +331,7 @@ class SimpleRange extends HTMLElement {
       false
     );
     this.removeEventListeners(max, ['input'], this.onRangeInput, false);
+
   }
 
   dispatchCustomEvent(el, event) {
