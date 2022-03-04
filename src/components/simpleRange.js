@@ -334,6 +334,7 @@ class SimpleRange extends HTMLElement {
 
     if (this.inputsForLabels) {
 
+
     }
   }
 
