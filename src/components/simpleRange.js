@@ -333,6 +333,7 @@ class SimpleRange extends HTMLElement {
     this.removeEventListeners(max, ['input'], this.onRangeInput, false);
 
     if (this.inputsForLabels) {
+
     }
   }
 
