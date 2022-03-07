@@ -338,6 +338,7 @@ class SimpleRange extends HTMLElement {
       );
       const upper = slider.querySelector(
         `[${constants.RANGE_INPUT_DATA_LABEL_MAX}]`
+      );
 
 
 
