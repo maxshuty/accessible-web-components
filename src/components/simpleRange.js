@@ -342,6 +342,7 @@ class SimpleRange extends HTMLElement {
 
       this.removeEventListeners(lower, ['input'], this.onRangeInput, false);
 
+      this.removeEventListeners(upper, ['input'], this.onRangeInput, false);
 
     }
   }
