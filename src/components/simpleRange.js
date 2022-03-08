@@ -340,6 +340,7 @@ class SimpleRange extends HTMLElement {
         `[${constants.RANGE_INPUT_DATA_LABEL_MAX}]`
       );
 
+      this.removeEventListeners(lower, ['input'], this.onRangeInput, false);
 
 
     }
