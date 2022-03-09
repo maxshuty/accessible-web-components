@@ -387,10 +387,6 @@ class SimpleRange extends HTMLElement {
     const min = slider.querySelector(`#${constants.MIN}`);
     const max = slider.querySelector(`#${constants.MAX}`);
 
-    /* set data-values */
-    min.setAttribute('data-value', this.minRange);
-    max.setAttribute('data-value', this.maxRange);
-
     slider.setAttribute('data-range-width', slider.offsetWidth);
 
     this.createLabels(slider, min);
