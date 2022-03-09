@@ -347,6 +347,7 @@ class SimpleRange extends HTMLElement {
       this.removeEventListeners(
         lower,
         ['blur'],
+        this.emitRangeSelection,
 
 
       // TODO Max P - reset-range event
