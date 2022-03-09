@@ -344,6 +344,7 @@ class SimpleRange extends HTMLElement {
 
       this.removeEventListeners(upper, ['input'], this.onRangeInput, false);
 
+      this.removeEventListeners(
 
 
       // TODO Max P - reset-range event
