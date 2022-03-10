@@ -355,6 +355,7 @@ class SimpleRange extends HTMLElement {
         upper,
         ['blur'],
         this.emitRangeSelection,
+      );
 
       // TODO Max P - reset-range event
     }
