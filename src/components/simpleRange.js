@@ -351,6 +351,7 @@ class SimpleRange extends HTMLElement {
         false
       );
 
+      this.removeEventListeners(
 
       // TODO Max P - reset-range event
     }
