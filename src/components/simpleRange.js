@@ -396,6 +396,7 @@ class SimpleRange extends HTMLElement {
     slider.setAttribute('data-range-width', slider.offsetWidth);
 
     this.setupPresetValues(min, max);
+
     this.createLabels(slider, min);
     this.createLegend(slider);
 
