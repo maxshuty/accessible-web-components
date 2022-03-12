@@ -400,7 +400,7 @@ class SimpleRange extends HTMLElement {
     this.createLabels(slider, min);
     this.createLegend(slider);
 
-    const averageOfMinAndMax = (this.minRange + this.maxRange) / 2;
+
     this.draw(slider, averageOfMinAndMax);
 
     // Adding update event that updates the range selector
