@@ -401,6 +401,7 @@ class SimpleRange extends HTMLElement {
     this.createLegend(slider);
 
     const averageOfMinAndMax =
+      ((this.presetMin || this.minRange) + (this.presetMax || this.maxRange)) /
 
     this.draw(slider, averageOfMinAndMax);
 
