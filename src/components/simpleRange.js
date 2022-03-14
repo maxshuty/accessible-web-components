@@ -425,6 +425,7 @@ class SimpleRange extends HTMLElement {
       constants.RANGE_STOPPED_EVENTS,
       this.emitRangeSelection
     );
+
   }
 
   // Sets the initial inner HTML of the slider. This is necessary because the init()
