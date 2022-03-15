@@ -435,8 +435,7 @@ class SimpleRange extends HTMLElement {
   setInitialSliderState(slider) {
     slider.innerHTML = `
       <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
-        <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
-      <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
+      <input id="${constants.MIN}" class="range-input" name="${constants.MIN}" type="range" step="1" />
   }
 
   // Emits new custom event for min-range-changed or max-range-changed so
