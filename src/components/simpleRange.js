@@ -426,6 +426,7 @@ class SimpleRange extends HTMLElement {
       this.emitRangeSelection
     );
 
+    this.setupResetFunctionality();
   }
 
   // Sets the initial inner HTML of the slider. This is necessary because the init()
@@ -433,11 +434,9 @@ class SimpleRange extends HTMLElement {
   // will end up getting duplicated
   setInitialSliderState(slider) {
     slider.innerHTML = `
+      <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
         <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
-        <input id="${constants.MIN}" class="range-input" name="${constants.MIN}" type="range" step="1" />
-        <label id="${constants.MAX_LABEL_ID}" for="${constants.MAX}">Maximum</label>
-        <input id="${constants.MAX}" class="range-input" name="${constants.MAX}" type="range" step="1" />
-      `;
+      <label id="${constants.MIN_LABEL_ID}" for="${constants.MIN}">Minimum</label> 
   }
 
   // Emits new custom event for min-range-changed or max-range-changed so
