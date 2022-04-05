@@ -438,6 +438,7 @@ class SimpleRange extends HTMLElement {
       <input id="${constants.MIN}" class="range-input" name="${constants.MIN}" type="range" step="1" />
       <label id="${constants.MAX_LABEL_ID}" for="${constants.MAX}">Maximum</label>
       <input id="${constants.MAX}" class="range-input" name="${constants.MAX}" type="range" step="1" />
+    `;
   }
 
   // Emits new custom event for min-range-changed or max-range-changed so
