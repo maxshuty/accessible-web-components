@@ -448,6 +448,7 @@ class SimpleRange extends HTMLElement {
       this.presetMin && this.presetMin < this.presetMax
         ? this.presetMin
         : this.minRange;
+
   }
   // Emits new custom event for min-range-changed or max-range-changed so
   // that the consumer of this component can do whatever they need when
