@@ -454,6 +454,7 @@ class SimpleRange extends HTMLElement {
         ? this.presetMax
         : this.maxRange;
 
+    min.setAttribute('data-value', minValue);
 
   }
   // Emits new custom event for min-range-changed or max-range-changed so
