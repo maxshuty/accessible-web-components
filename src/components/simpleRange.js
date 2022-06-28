@@ -461,6 +461,7 @@ class SimpleRange extends HTMLElement {
     max.value = minValue;
   }
 
+  s
   // Emits new custom event for min-range-changed or max-range-changed so
   // that the consumer of this component can do whatever they need when
   // the values are changed
