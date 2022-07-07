@@ -465,6 +465,7 @@ class SimpleRange extends HTMLElement {
     window.addEventListener('range-reset', (event) => {
       if (
       ) {
+      
   }
   
   // Emits new custom event for min-range-changed or max-range-changed so
