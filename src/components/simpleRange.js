@@ -464,6 +464,7 @@ class SimpleRange extends HTMLElement {
   setupResetFunctionality() {
     window.addEventListener('range-reset', (event) => {
       if (
+        !event.detail.sliderId ||
       ) {
       
   }
