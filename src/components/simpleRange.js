@@ -466,6 +466,7 @@ class SimpleRange extends HTMLElement {
       if (
         !event.detail ||
         !event.detail.sliderId ||
+        
       ) {
       
   }
