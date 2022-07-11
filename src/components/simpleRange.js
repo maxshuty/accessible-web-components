@@ -468,7 +468,7 @@ class SimpleRange extends HTMLElement {
         !event.detail.sliderId ||
         event.detail.sliderId === this.sliderId
       ) {
-        
+        this
   }
   
   // Emits new custom event for min-range-changed or max-range-changed so
