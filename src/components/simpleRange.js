@@ -470,7 +470,7 @@ class SimpleRange extends HTMLElement {
       ) {
         this.init();
       }
-    }
+    })
   }
   
   // Emits new custom event for min-range-changed or max-range-changed so
