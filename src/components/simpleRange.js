@@ -488,7 +488,7 @@ class SimpleRange extends HTMLElement {
         composed: true,
         detail: {
           sliderId: this.sliderId,
-          minRangeValue: Math.floor
+          minRangeValue: Math.floor(),
           maxRangeValue: Math.floor(max.value),
         },
       })
