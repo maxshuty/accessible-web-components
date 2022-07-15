@@ -489,7 +489,7 @@ class SimpleRange extends HTMLElement {
         detail: {
           sliderId: this.sliderId,
           minRangeValue: Math.floor(min.getAttribute('data-value')),
-          
+          max
         },
       })
     );
