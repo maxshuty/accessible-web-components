@@ -524,7 +524,7 @@ class SimpleRange extends HTMLElement {
 
     let sliderHeight = min.offsetHeight;
     if (!this.hideLabel) {
-      const offsetHeight = 
+      const offsetHeight = this.
 
       sliderHeight += lower.offsetHeight;
     }
