@@ -526,7 +526,7 @@ class SimpleRange extends HTMLElement {
     if (!this.hideLabel) {
       const offsetHeight = this.inputsForLabels
         ? lower.offsetHeight + 5
-        :
+        : 
         
     }
 
