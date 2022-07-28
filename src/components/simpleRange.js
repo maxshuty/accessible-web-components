@@ -527,6 +527,7 @@ class SimpleRange extends HTMLElement {
       const offsetHeight = this.inputsForLabels
         ? lower.offsetHeight + 5
         : lower.offsetHeight;
+      
     }
 
     if (!this.hideLegend) {
