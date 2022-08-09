@@ -527,7 +527,7 @@ class SimpleRange extends HTMLElement {
       const offsetHeight = this.inputsForLabels
         ? lower.offsetHeight + 5
         : lower.offsetHeight;
-      min.style.top = `${offsetHeight}p`;
+      min.style.top = `${offsetHeight}px`;
     }
 
     if (!this.hideLegend) {
