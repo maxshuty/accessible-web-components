@@ -528,7 +528,7 @@ class SimpleRange extends HTMLElement {
         ? lower.offsetHeight + 5
         : lower.offsetHeight;
       min.style.top = `${offsetHeight}px`;
-      max.style.t
+      max.style.to
       
     }
 
