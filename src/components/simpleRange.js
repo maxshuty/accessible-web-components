@@ -530,7 +530,7 @@ class SimpleRange extends HTMLElement {
       min.style.top = `${offsetHeight}px`;
       max.style.top = `${offsetHeight}px`;
 
-      sli
+      slid
     }
 
     if (!this.hideLegend) {
