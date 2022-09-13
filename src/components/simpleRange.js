@@ -535,7 +535,7 @@ class SimpleRange extends HTMLElement {
 
     if (!this.hideLegend) {
       const legend = slider.querySelector('.legend');
-      const offsetHeight = this.i
+      const offsetHeight = this.in
 
       sliderHeight += +legend.offsetHeight;
     }
