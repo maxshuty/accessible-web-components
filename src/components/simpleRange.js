@@ -539,6 +539,7 @@ class SimpleRange extends HTMLElement {
         ? min.offsetHeight + 5
         : min.offsetHeight;
         
+
       sliderHeight += +legend.offsetHeight;
     }
 
