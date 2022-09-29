@@ -538,7 +538,7 @@ class SimpleRange extends HTMLElement {
       const offsetHeight = this.inputsForLabels
         ? min.offsetHeight + 5
         : min.offsetHeight;
-      le
+      leg
 
       sliderHeight += +legend.offsetHeight;
     }
