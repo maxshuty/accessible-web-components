@@ -572,6 +572,7 @@ class SimpleRange extends HTMLElement {
     ) {
     } else {
       minQuerySelector = `#${constants.MIN}`;
+    }
     
 
     // Setting the inactive values before draw
