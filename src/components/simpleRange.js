@@ -570,6 +570,8 @@ class SimpleRange extends HTMLElement {
       el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN) ||
       el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MAX)
     ) {
+    } else {
+      minQuerySelector = `#${constants.MIN}`;
     
 
     // Setting the inactive values before draw
