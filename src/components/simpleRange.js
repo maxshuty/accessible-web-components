@@ -566,6 +566,10 @@ class SimpleRange extends HTMLElement {
 
     let minQuerySelector;
     let maxQuerySelector;
+    if (
+      el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN) ||
+      el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MAX)
+    ) {
     
 
     // Setting the inactive values before draw
