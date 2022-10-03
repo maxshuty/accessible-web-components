@@ -545,11 +545,6 @@ class SimpleRange extends HTMLElement {
 
     slider.style.height = `${sliderHeight}px`;
 
-    if (max.value > this.maxRange - 1) {
-      // Correcting if it's 1 off at the end
-      max.setAttribute('data-value', this.maxRange);
-    }
-
     max.value = max.getAttribute('data-value');
     min.value = min.getAttribute('data-value');
 
