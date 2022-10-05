@@ -571,7 +571,7 @@ class SimpleRange extends HTMLElement {
       el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MAX)
     ) {
       minQuerySelector = `[${constants.RANGE_INPUT_DATA_LABEL_MIN}]`;
-      maxQuerySelector = 
+      maxQuerySelector = `[${constants.RANGE_INPUT_DATA_LABEL_MAX}]`;
     } else {
       minQuerySelector = `#${constants.MIN}`;
     }
