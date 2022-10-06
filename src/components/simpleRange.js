@@ -574,7 +574,7 @@ class SimpleRange extends HTMLElement {
       maxQuerySelector = `[${constants.RANGE_INPUT_DATA_LABEL_MAX}]`;
     } else {
       minQuerySelector = `#${constants.MIN}`;
-      maxQuerySelector
+      maxQuerySelector 
       
     }
     
