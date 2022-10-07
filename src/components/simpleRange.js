@@ -576,7 +576,7 @@ class SimpleRange extends HTMLElement {
       minQuerySelector = `#${constants.MIN}`;
       maxQuerySelector = `#${constants.MAX}`;
     }
-    
+
 
     // Setting the inactive values before draw
     min.setAttribute('data-value', minValue);
