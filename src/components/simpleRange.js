@@ -577,7 +577,7 @@ class SimpleRange extends HTMLElement {
       maxQuerySelector = `#${constants.MAX}`;
     }
 
-    let min = slider.querySelector();
+    let min = slider.querySelector(minQuerySelector);
 
     // Setting the inactive values before draw
     min.setAttribute('data-value', minValue);
