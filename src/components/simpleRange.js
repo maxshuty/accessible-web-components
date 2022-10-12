@@ -580,7 +580,7 @@ class SimpleRange extends HTMLElement {
     let min = slider.querySelector(minQuerySelector);
     let max = slider.querySelector(maxQuerySelector);
 
-    let minValue = Math.floor(parseInt(min.));
+    let minValue = Math.floor(parseInt(min.value));
 
     const averageOfMinAndMax = (minValue + maxValue) / 2;
     this.draw(slider, averageOfMinAndMax);
