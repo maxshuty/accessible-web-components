@@ -584,6 +584,7 @@ class SimpleRange extends HTMLElement {
     let maxValue = Math.floor(parseInt(max.value));
 
     if () {
+      return
 
     this.draw(slider, averageOfMinAndMax);
   }
