@@ -585,6 +585,7 @@ class SimpleRange extends HTMLElement {
 
     if (!this.isValidRangeSelection(el, minValue, maxValue)) {
       return;
+    }
 
     this.draw(slider, averageOfMinAndMax);
   }
