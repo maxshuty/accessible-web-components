@@ -587,8 +587,7 @@ class SimpleRange extends HTMLElement {
       return;
     }
 
-    let 
-    
+    let minSliderInput
     this.draw(slider, averageOfMinAndMax);
   }
 
