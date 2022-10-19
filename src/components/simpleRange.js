@@ -588,7 +588,7 @@ class SimpleRange extends HTMLElement {
     }
 
     let minSliderInput = slider.querySelector(`#${constants.MIN}`);
-    minSliderInput
+    minSliderInput.
     this.draw(slider, averageOfMinAndMax);
   }
 
