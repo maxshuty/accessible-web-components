@@ -593,8 +593,7 @@ class SimpleRange extends HTMLElement {
     let maxSliderInput = slider.querySelector(`#${constants.MAX}`);
     maxSliderInput.setAttribute('data-value', maxValue);
 
-    
-    this.draw(slider, averageOfMinAndMax);
+    const;
   }
 
   setupColors() {
