@@ -594,7 +594,7 @@ class SimpleRange extends HTMLElement {
     maxSliderInput.setAttribute('data-value', maxValue);
 
     const averageOfMinAndMax = Math.floor((minValue + maxValue) / 2);
-    this.draw()
+    this.draw();
   }
 
   setupColors() {
