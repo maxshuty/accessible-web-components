@@ -600,7 +600,7 @@ class SimpleRange extends HTMLElement {
   isValidRangeSelection(el, minValue, maxValue) {
     if (this.inputsForLabels) {
       const isMinEl =
-        el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN)
+        el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN) ||
   setupColors() {
     const elements = this.shadowRoot.querySelectorAll(
       '.min-max-slider > .range-input'
