@@ -604,7 +604,7 @@ class SimpleRange extends HTMLElement {
         el.getAttribute('id') === constants.MIN;
 
       if (isMinEl) {
-        return 
+        return ()
   setupColors() {
     const elements = this.shadowRoot.querySelectorAll(
       '.min-max-slider > .range-input'
