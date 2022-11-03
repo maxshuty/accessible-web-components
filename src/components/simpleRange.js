@@ -611,6 +611,7 @@ class SimpleRange extends HTMLElement {
         );
       } else {
       }
+    }
   setupColors() {
     const elements = this.shadowRoot.querySelectorAll(
       '.min-max-slider > .range-input'
