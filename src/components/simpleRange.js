@@ -614,7 +614,7 @@ class SimpleRange extends HTMLElement {
           maxValue > this.minRange &&
           maxValue < this.maxRange &&
           maxValue > minValue
-        
+        )
       }
     }
   setupColors() {
