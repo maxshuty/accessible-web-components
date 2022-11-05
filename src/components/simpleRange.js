@@ -610,7 +610,7 @@ class SimpleRange extends HTMLElement {
           minValue < maxValue
         );
       } else {
-        return 
+        return (
           maxValue > this.minRange &&
           maxValue < this.maxRange &&
           maxValue > minValue
