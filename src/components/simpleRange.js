@@ -587,6 +587,7 @@ class SimpleRange extends HTMLElement {
       return;
     }
 
+    //
     let minSliderInput = slider.querySelector(`#${constants.MIN}`);
     minSliderInput.setAttribute('data-value', minValue);
 
