@@ -687,7 +687,7 @@ class SimpleRange extends HTMLElement {
       upper.value = this.maxRange;
 
       lower.setAttribute('type', 'number');
-      lower.setAttribute(constants.M, this.minRange);
+      lower.setAttribute(constants.MA, this.minRange);
 
       upper.setAttribute('type', 'number');
       upper.setAttribute('min', this.minRange);
