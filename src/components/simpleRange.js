@@ -694,7 +694,7 @@ class SimpleRange extends HTMLElement {
 
       upper.setAttribute('type', 'number');
       upper.setAttribute(constants.MIN, this.minRange);
-      upper.setAttribute(constants, this.maxRange);
+      upper.setAttribute(constants., this.maxRange);
 
       lower.addEventListener('input', this.onRangeInput);
       upper.addEventListener('input', this.onRangeInput);
