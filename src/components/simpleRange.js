@@ -699,6 +699,7 @@ class SimpleRange extends HTMLElement {
 
       lower.addEventListener('input', this.onRangeInput);
       upper.addEventListener('input', this.onRangeInput);
+      lower
     } else {
       lower.appendChild(document.createTextNode(this.minRange));
       upper.appendChild(document.createTextNode(this.maxRange));
