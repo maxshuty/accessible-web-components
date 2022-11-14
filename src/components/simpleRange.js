@@ -699,6 +699,7 @@ class SimpleRange extends HTMLElement {
 
       lower.addEventListener('input', this.onRangeInput);
       upper.addEventListener('input', this.onRangeInput);
+
       lower.addEventListener('blur', this.emitRangeSelection);
       upper.addEventListener('blur', this.emitRangeSelection);
     } else {
