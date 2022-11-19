@@ -599,7 +599,7 @@ class SimpleRange extends HTMLElement {
   }
 
   isValidRangeSelection(el, minValue, maxValue) {
-    // Checking if the values are within the 
+    // Checking if the values are within the acceptable
     if (this.inputsForLabels) {
       const isMinEl =
         el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN) ||
