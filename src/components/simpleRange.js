@@ -603,7 +603,7 @@ class SimpleRange extends HTMLElement {
     // since the min value should never be more than the maxvalue
     // and the maxValue never less than the minValue.
     // This could occur if the user has inputs enabled and manually
-    // types a wrong number into the input.
+    // types a wrong number into the input. 
     if (this.inputsForLabels) {
       const isMinEl =
         el.hasAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN) ||
