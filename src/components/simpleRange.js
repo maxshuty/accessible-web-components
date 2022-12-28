@@ -121,16 +121,16 @@ template.innerHTML = `
       }
 
       .range-span-label {
-        --beforeContent: '';
-        --afterContent: '';
+        --beforeContent: '$';
+        --afterContent: '+';
       }
 
       .range-span-label::before {
-        content: "$";
+        content: var(--beforeContent);
       }
 
       .range-span-label::after {
-        content: "+";
+        content: var(--afterContent);
       }
 
       .range-input-dash-icon {
