@@ -120,6 +120,19 @@ template.innerHTML = `
         padding: 0 ${cssHelpers.sliderCommonSize};
       }
 
+      .range-span-label {
+        --beforeContent: '';
+        --afterContent: '';
+      }
+
+      .range-span-label::before {
+        content: "$";
+      }
+
+      .range-span-label::after {
+        content: "+";
+      }
+
       .range-input-dash-icon {
         padding: 0 ${cssHelpers.sliderCommonSize};
       }
