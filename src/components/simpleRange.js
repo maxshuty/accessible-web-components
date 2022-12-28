@@ -1,5 +1,5 @@
 /*
-  SimpleRange v1.0.4 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
+  SimpleRange v1.0.5 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
   By Max Poshusta | https://github.com/maxshuty | https://www.linkedin.com/in/maxposhusta/
 */
 
@@ -49,17 +49,17 @@ template.innerHTML = `
         justify-content: space-between;
       }
         
-      .min-max-slider > .legend > * {
-        font-size: small;
-      }
-        
       .min-max-slider > .range-input {
+        --sliderCircleSize: ${cssHelpers.sliderCircleSize}px;
         --sliderColor: ${cssHelpers.sliderCircleBackgroundColor};
         --sliderBorderColor: ${cssHelpers.sliderBorderColor};
         --sliderFocusBorderColor: ${cssHelpers.sliderCircleFocusColor};
+        --sliderCircleBorder: 1px solid var(--sliderBorderColor);
+        --sliderCircleFocusBorder: 2px solid var(--sliderFocusBorderColor);
         cursor: pointer;
         position: absolute;
         -webkit-appearance: none;
+        appearance: none;
         outline: none !important;
         background: transparent;
         background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${
@@ -72,20 +72,20 @@ template.innerHTML = `
       .min-max-slider > .range-input::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: ${cssHelpers.sliderCircleSize}px;
-        height: ${cssHelpers.sliderCircleSize}px;
+        width: var(--sliderCircleSize);
+        height: var(--sliderCircleSize);
         background-color: var(--sliderColor);
         cursor: pointer;
-        border: 1px solid var(--sliderBorderColor);
+        border: var(--sliderCircleBorder);
         border-radius: 100%;
       }
       
       .min-max-slider > .range-input::-moz-range-thumb {
-        width: ${cssHelpers.sliderCircleSize}px;
-        height: ${cssHelpers.sliderCircleSize}px;
+        width: var(--sliderCircleSize);
+        height: var(--sliderCircleSize);
         background-color: var(--sliderColor);
         cursor: pointer;
-        border: 1px solid var(--sliderBorderColor);
+        border: var(--sliderCircleBorder);
         border-radius: 100%;
       } 
         
@@ -96,17 +96,20 @@ template.innerHTML = `
         
       .min-max-slider > .range-input:focus::-webkit-slider-thumb {
         /* Accessible border on focus */
-        border: 2px solid var(--sliderFocusBorderColor);
+        border: var(--sliderCircleFocusBorder);
       }
 
       .min-max-slider > .range-input:focus::-moz-range-thumb {
           /* Accessible border on focus */
-          border: 2px solid var(--sliderFocusBorderColor);
+          border: var(--sliderCircleFocusBorder);
       }
         
       span.value {
-        height: 1.7em;
-        font-weight: bold;
+        --labelFontSize: 16px;
+        --labelFontWeight: bold;
+        font-size: var(--labelFontSize);
+        font-weight: var(--labelFontWeight);
+        height: auto;
         display: inline-block;
       }
     
@@ -223,6 +226,28 @@ class SimpleRange extends HTMLElement {
 
   get circleFocusBorderColor() {
     return this.getAttribute('circle-focus-border-color');
+  }
+
+  get circleBorder() {
+    // Altering the whole border
+    return this.getAttribute('circle-border');
+  }
+
+  get circleFocusBorder() {
+    // Altering the whole focus border
+    return this.getAttribute('circle-focus-border');
+  }
+
+  get circleSize() {
+    return this.getAttribute('circle-size');
+  }
+
+  get labelFontWeight() {
+    return this.getAttribute('label-font-weight');
+  }
+
+  get labelFontSize() {
+    return this.getAttribute('label-font-size');
   }
 
   get eventNameToEmitOnChange() {
@@ -388,7 +413,7 @@ class SimpleRange extends HTMLElement {
     const slider = this.getEl(constants.SLIDER_ID);
 
     this.setInitialSliderState(slider);
-    this.setupColors();
+    this.setupStyles();
 
     const min = slider.querySelector(`#${constants.MIN}`);
     const max = slider.querySelector(`#${constants.MAX}`);
@@ -624,11 +649,13 @@ class SimpleRange extends HTMLElement {
         );
       }
     }
-  setupColors() {
-    const elements = this.shadowRoot.querySelectorAll(
+    return minValue !== maxValue;
+  }
+  setupStyles() {
+    const rangeInputEls = this.shadowRoot.querySelectorAll(
       '.min-max-slider > .range-input'
     );
-    elements.forEach((el) => {
+    rangeInputEls.forEach((el) => {
       if (this.sliderColor) {
         el.style.backgroundImage = `linear-gradient(to bottom, transparent 0%, transparent 30%, ${this.sliderColor} 30%, ${this.sliderColor} 60%, transparent 60%, transparent 100%)`;
       }
@@ -646,6 +673,18 @@ class SimpleRange extends HTMLElement {
           '--sliderFocusBorderColor',
           this.circleFocusBorderColor
         );
+      }
+
+      if (this.circleBorder) {
+        el.style.setProperty('--sliderCircleBorder', this.circleBorder);
+      }
+
+      if (this.circleFocusBorder) {
+        el.style.setProperty('--sliderCircleFocusBorder', this.circleFocusBorder);
+      }
+
+      if (this.circleSize) {
+        el.style.setProperty('--sliderCircleSize', this.circleSize);
       }
     });
   }
@@ -677,6 +716,21 @@ class SimpleRange extends HTMLElement {
     slider.appendChild(legend);
   }
 
+  setupLabelStyles(lower, upper) {
+    // Setting up custom CSS styles for labels
+    const setPropertyForLabels = (property, value) => {
+      lower.style.setProperty(property, value);
+      upper.style.setProperty(property, value);
+    };
+
+    if (this.labelFontWeight) {
+      setPropertyForLabels('--labelFontWeight', this.labelFontWeight);
+    }
+
+    if (this.labelFontSize) {
+      setPropertyForLabels('--labelFontSize', this.labelFontSize);
+    }
+  }
   createLabels(slider, min) {
     if (this.hideLabel) {
       return;
@@ -688,6 +742,8 @@ class SimpleRange extends HTMLElement {
 
     lower.classList.add(`range-${labelType}-label`, 'lower', 'value');
     upper.classList.add(`range-${labelType}-label`, 'upper', 'value');
+
+    this.setupLabelStyles(lower, upper);
 
     if (this.inputsForLabels) {
       lower.value = this.minRange;

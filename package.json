@@ -1,13 +1,13 @@
 {
   "name": "accessible-ui-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A library of simple, lightweight, extensible, and accessible UI Components",
   "main": "./src/components/simpleRange.js.js",
   "scripts": {
     "uglify": "gulp js-minify"
   },
   "author": "Max Poshusta",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",

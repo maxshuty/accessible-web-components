@@ -6,9 +6,9 @@ With Simple Range you can easily create multiple extensible & accessible range s
 
 ### Accessibility Statement
 
-This component was designed with accessibility in mind, however it by no means guarantees that it is fully accessible as browsers are always changing and accessibility requirements are always being refined.
+This component was designed with accessibility in mind. It was also developed to be extremely flexible and reusable, that means you could easily break accessibility by doing things like making the fonts too small, altering focus states, and so on. Use due diligence when altering the component to ensure you're still accessible with the custom options you apply to it!
 
-If you notice any issues at all regarding accessibility of this component we implore you to [submit an issue](https://github.com/maxshuty/accessible-web-components/issues).
+ This also by no means guarantees that it is fully accessible as accessibility requirements are ever evolving, so if you notice any issues at all regarding accessibility of this component we implore you to [submit an issue](https://github.com/maxshuty/accessible-web-components/issues).
 
 ## Demo
 
@@ -58,10 +58,15 @@ window.addEventListener('range-changed', (e) => {
 | `inputs-for-labels`              | boolean | Whether or not to use inputs instead of labels so that the user can manually type in the range. Simply add the `inputs-for-labels` attribute for this to work (truth is inferred by the presence of this attribute existing) |                         `false`                          |
 | `hide-label`                     | boolean | Whether or not to hide the label. Simply add the `hide-label` attribute for this to work (truth is inferred by the presence of this attribute existing)                                                                      |                         `false`                          |
 | `hide-legend`                    | boolean | Whether or not to hide the legend. Simply add the `hide-legend` attribute for this to work (truth is inferred by the presence of this attribute existing)                                                                    |                         `false`                          |
-| `slider-color`                   | string  | An awesome[red]sauce color (pun intended)                                                                                                                                                                                    |                         `tomato`                         |
+| `slider-color`                   | string  | An awesome[red]sauce color (pun intended)                                                                                                                                                                                    |
+| `circle-border`            | string  | The CSS border property of the circle                                                                                                                                                                                     |                     `1px solid {circle-border-color}` and if `circle-border-color` is not provided it defaults to `1px solid #8b8b8b`                   |  
+| `circle-focus-border`            | string  | The CSS focus border property of the circle                                                                                                                                                                                     |                     `2px solid {circle-focus-border-color}` and if `circle-focus-border-color` is not provided it defaults to `2px solid #0074cc`                   |                         `tomato`                         |
 | `circle-color`                   | string  | The color of the slider circles                                                                                                                                                                                              |                    `#ffffff` (white)                     |
 | `circle-border-color`            | string  | The border color of the slider circles                                                                                                                                                                                       |                     `#8b8b8b` (grey)                     |
-| `circle-focus-border-color`      | string  | The focus border color of the slider circles (for accessibility). This should have proper contrast with the other colors you have selected or else it may fail accessibility requirements.                                   | `#0074cc` (Similar to Chromes default blue focus border) |
+| `circle-focus-border-color`      | string  | The focus border color of the slider circles (for accessibility). This should have proper contrast with the other colors you have selected or else it may fail accessibility requirements                                  | `#0074cc` (Similar to Chromes default blue focus border) |
+| `circle-size`            | string  | The size of the circle sliders. _Note: The size of the range line automatically adjusts based on the height of the slider circles. If you have a use case where you need this to be independent please submit an [Issue](https://github.com/maxshuty/accessible-web-components/issues)_                                                                                                                                                                                     |                     `20px`                   |
+| `label-font-weight`             | string  | The font weight of the labels                                                                                                                                                                                                |                          `bold`                          |
+| `label-font-size`               | string  | The font size of the labels                                                                                                                                                                                                  |                          `16px`                          |
 
 ## Resetting the slider to its initial state
 
@@ -111,6 +116,7 @@ use the shorthand `min` & `max` instead of `min-range` and `max-range`:
 ```
 
 You can set the preset values for the min and max easily using `preset-min` and `preset-max`:
+
 ```
 <range-selector
   min-label="Minimum"
