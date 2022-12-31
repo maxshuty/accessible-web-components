@@ -1,5 +1,5 @@
 /*
-  SimpleRange v1.0.5 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
+  SimpleRange v1.0.6 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
   By Max Poshusta | https://github.com/maxshuty | https://www.linkedin.com/in/maxposhusta/
 */
 
@@ -105,6 +105,8 @@ template.innerHTML = `
       }
         
       span.value {
+        --labelBeforeContent: '';
+        --labelAfterContent: '';
         --labelFontSize: 16px;
         --labelFontWeight: bold;
         font-size: var(--labelFontSize);
@@ -112,12 +114,13 @@ template.innerHTML = `
         height: auto;
         display: inline-block;
       }
-    
-      span.value.upper::before {
-        content: "${'\\FE63'}";
-        white-space: pre;
-        display: inline-block;
-        padding: 0 ${cssHelpers.sliderCommonSize};
+
+      span.value::before {
+        content: var(--labelBeforeContent);
+      }
+
+      span.value::after {
+        content: var(--labelAfterContent);
       }
 
       .range-input-dash-icon {
@@ -240,6 +243,16 @@ class SimpleRange extends HTMLElement {
 
   get circleSize() {
     return this.getAttribute('circle-size');
+  }
+
+  get labelAfterContent() {
+    // CSS ::after
+    return this.getAttribute('label-after');
+  }
+
+  get labelBeforeContent() {
+    // CSS ::before
+    return this.getAttribute('label-before');
   }
 
   get labelFontWeight() {
@@ -723,6 +736,20 @@ class SimpleRange extends HTMLElement {
       upper.style.setProperty(property, value);
     };
 
+    if (this.labelAfterContent) {
+      setPropertyForLabels(
+        '--labelAfterContent',
+        `'${this.labelAfterContent}'`
+      );
+    }
+
+    if (this.labelBeforeContent) {
+      setPropertyForLabels(
+        '--labelBeforeContent',
+        `'${this.labelBeforeContent}'`
+      );
+    }
+
     if (this.labelFontWeight) {
       setPropertyForLabels('--labelFontWeight', this.labelFontWeight);
     }
@@ -772,18 +799,16 @@ class SimpleRange extends HTMLElement {
     slider.insertBefore(lower, min.previousElementSibling);
     slider.insertBefore(upper, min.previousElementSibling);
 
-    if (this.inputsForLabels) {
-      // Adding a "-" symbol beyween the range inputs since you cannot do
-      // this via CSS pseudo (before/after) selectors on an input element
-      let dashIcon = document.createElement('i');
-      dashIcon.classList.add('range-input-dash-icon');
-      dashIcon.setAttribute('aria-hidden', true);
-      dashIcon.innerHTML = '&#65123';
-      slider.insertBefore(
-        dashIcon,
-        min.previousElementSibling.previousElementSibling
-      );
-    }
+    // Adding a "-" symbol beyween the range inputs since you cannot do
+    // this via CSS pseudo (before/after) selectors on an input element
+    let dashIcon = document.createElement('i');
+    dashIcon.classList.add('range-input-dash-icon');
+    dashIcon.setAttribute('aria-hidden', true);
+    dashIcon.innerHTML = '&#65123';
+    slider.insertBefore(
+      dashIcon,
+      min.previousElementSibling.previousElementSibling
+    );
   }
 }
 

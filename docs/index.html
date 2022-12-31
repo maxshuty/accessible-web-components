@@ -172,6 +172,32 @@
 
       <div>
         <p>
+          Using <code>label-before</code> and <code>label-after</code> to set the <code>::before</code> and <code>::after</code> content of the labels:
+          
+          <pre>
+            <code>
+&lt;range-selector 
+  min-range="100"
+  max-range="1000"
+  label-before="$"
+  label-after="*"
+  slider-color="darkgrey"
+/&gt;
+            </code>
+          </pre>
+        </p>
+
+        <range-selector 
+          min-range="100" 
+          max-range="1000"
+          label-before="$"
+          label-after="*"
+          slider-color="darkgrey"
+        />
+      </div>
+
+      <div>
+        <p>
           You can adjust the number of legend items to show and you can also use
           the shorthand <code>min</code> & <code>max</code> instead of
           <code>min-range</code> and <code>max-range</code>.
