@@ -669,6 +669,7 @@ class SimpleRange extends HTMLElement {
     const rangeInputEls = this.shadowRoot.querySelectorAll(
       '.min-max-slider > .range-input'
     );
+
     rangeInputEls.forEach((el) => {
       if (this.sliderColor) {
         el.style.backgroundImage = `linear-gradient(to bottom, transparent 0%, transparent 30%, ${this.sliderColor} 30%, ${this.sliderColor} 60%, transparent 60%, transparent 100%)`;
