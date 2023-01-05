@@ -499,7 +499,7 @@ class SimpleRange extends HTMLElement {
     max.value = minValue;
   }
 
-  // Addi
+  // Adding
   setupResetFunctionality() {
     window.addEventListener('range-reset', (event) => {
       if (
