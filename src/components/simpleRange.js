@@ -1,5 +1,5 @@
 /*
-  SimpleRange v1.0.6 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
+  SimpleRange v1.0.7 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
   By Max Poshusta | https://github.com/maxshuty | https://www.linkedin.com/in/maxposhusta/
 */
 
@@ -417,6 +417,10 @@ class SimpleRange extends HTMLElement {
     });
   }
 
+  getAverage(min, max) {
+    return Math.floor((min + max) / 2);
+  }
+
   getEl(id) {
     return this.shadowRoot.getElementById(id);
   }
@@ -438,11 +442,7 @@ class SimpleRange extends HTMLElement {
     this.createLabels(slider, min);
     this.createLegend(slider);
 
-    const averageOfMinAndMax =
-      ((this.presetMin || this.minRange) + (this.presetMax || this.maxRange)) /
-      2;
-
-    this.draw(slider, averageOfMinAndMax);
+    this.draw(slider, this.getAverage((this.presetMin || this.minRange), (this.presetMax || this.maxRange)));
 
     // Adding update event that updates the range selector
     min.addEventListener('input', this.onRangeInput);
@@ -495,8 +495,8 @@ class SimpleRange extends HTMLElement {
     min.setAttribute('data-value', minValue);
     max.setAttribute('data-value', maxValue);
 
-    min.value = maxValue;
-    max.value = minValue;
+    min.value = minValue;
+    max.value = maxValue;
   }
 
   // Adding event listener to reset the slider
@@ -618,7 +618,7 @@ class SimpleRange extends HTMLElement {
 
     let min = slider.querySelector(minQuerySelector);
     let max = slider.querySelector(maxQuerySelector);
-
+    
     let minValue = Math.floor(parseInt(min.value));
     let maxValue = Math.floor(parseInt(max.value));
 
@@ -633,8 +633,7 @@ class SimpleRange extends HTMLElement {
     let maxSliderInput = slider.querySelector(`#${constants.MAX}`);
     maxSliderInput.setAttribute('data-value', maxValue);
 
-    const averageOfMinAndMax = Math.floor((minValue + maxValue) / 2);
-    this.draw(slider, averageOfMinAndMax);
+    this.draw(slider, this.getAverage(minValue, maxValue));
   }
 
   isValidRangeSelection(el, minValue, maxValue) {
