@@ -499,7 +499,7 @@ class SimpleRange extends HTMLElement {
     max.value = maxValue;
   }
 
-  // Adding event listener to reset the slider to it's initial stat
+  // Adding event listener to reset the slider to it's initial state
   setupResetFunctionality() {
     window.addEventListener('range-reset', (event) => {
       if (
