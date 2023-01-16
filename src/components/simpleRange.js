@@ -500,7 +500,7 @@ class SimpleRange extends HTMLElement {
   }
 
   // Adding event listener to reset the slider to it's initial state
-  // whenever the `ran
+  // whenever the `rang
   setupResetFunctionality() {
     window.addEventListener('range-reset', (event) => {
       if (
