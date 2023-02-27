@@ -510,7 +510,7 @@ class SimpleRange extends HTMLElement {
         !event.detail.sliderId ||
         event.detail.sliderId === this.sliderId
       ) {
-        // The user has not 
+        // The user has not provided
         this.init();
       }
     });
