@@ -510,7 +510,7 @@ class SimpleRange extends HTMLElement {
         !event.detail.sliderId ||
         event.detail.sliderId === this.sliderId
       ) {
-        // The user has not provided a sliderId so we reset *every*
+        // The user has not provided a sliderId so we reset *every* 
         this.init();
       }
     });
