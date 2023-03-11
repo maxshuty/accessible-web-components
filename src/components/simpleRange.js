@@ -440,6 +440,7 @@ class SimpleRange extends HTMLElement {
 
     this.draw(
         this.presetMin || this.minRange,
+        this.presetMax || this.maxRange
 
     // Adding update event that updates the range selector
     min.addEventListener('input', this.onRangeInput);
