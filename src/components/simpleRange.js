@@ -396,7 +396,7 @@ class SimpleRange extends HTMLElement {
         false
       );
 
-      // TODO Max P - reset-range event
+      // TODO Max P: reset-range event
     }
   }
 
