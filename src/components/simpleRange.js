@@ -438,7 +438,7 @@ class SimpleRange extends HTMLElement {
     this.createLabels(slider, min);
     this.createLegend(slider);
 
-    this.draw(slider, this.getAverage((this.presetMin || this.minRange), (this.presetMax || this.maxRange)));
+    this.draw(
 
     // Adding update event that updates the range selector
     min.addEventListener('input', this.onRangeInput);
