@@ -624,7 +624,7 @@ class SimpleRange extends HTMLElement {
 
     let min = slider.querySelector(minQuerySelector);
     let max = slider.querySelector(maxQuerySelector);
-    
+
     let minValue = Math.floor(parseInt(min.value));
     let maxValue = Math.floor(parseInt(max.value));
 
