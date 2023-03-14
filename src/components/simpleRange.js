@@ -671,7 +671,7 @@ class SimpleRange extends HTMLElement {
       }
     }
 
-    // They are using
+    // They are using 
     return minValue !== maxValue;
   }
 
