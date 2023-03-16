@@ -671,7 +671,7 @@ class SimpleRange extends HTMLElement {
       }
     }
 
-    // They are using the non-input version, the only way to make the 
+    // They are using the non-input version, the only way to make the values
     return minValue !== maxValue;
   }
 
