@@ -673,7 +673,7 @@ class SimpleRange extends HTMLElement {
 
     // They are using the non-input version, the only way to make the values
     // not valid would be if someone is trying doing something naughty in
-    // which case oh well if 
+    // which case oh well if this
     return minValue !== maxValue;
   }
 
