@@ -343,6 +343,9 @@ class SimpleRange extends HTMLElement {
 
   connectedCallback() {
     this.init();
+
+    const resizeObserver = new ResizeObserver(this.onResize(this));
+    resizeObserver.observe(this.shadowRoot.querySelector('.min-max-slider'));
   }
 
   disconnectedCallback() {
@@ -432,8 +435,6 @@ class SimpleRange extends HTMLElement {
     const min = slider.querySelector(`#${constants.MIN}`);
     const max = slider.querySelector(`#${constants.MAX}`);
 
-    slider.setAttribute('data-range-width', slider.offsetWidth);
-
     this.setupPresetValues(min, max);
 
     this.createLabels(slider, min);
@@ -468,6 +469,13 @@ class SimpleRange extends HTMLElement {
     );
 
     this.setupResetFunctionality();
+  }
+
+  onResize(localThis) {
+    return function (entries) {
+      const slider = entries[0].target;
+      localThis.update(slider.querySelector('.range-input'));
+    };
   }
 
   // Sets the initial inner HTML of the slider. This is necessary because the init()
@@ -552,7 +560,7 @@ class SimpleRange extends HTMLElement {
     max.setAttribute(constants.MIN, splitValue);
     max.setAttribute(constants.MAX, this.maxRange);
 
-    const rangeWidth = parseInt(slider.getAttribute('data-range-width'));
+    const rangeWidth = slider.offsetWidth;
     const thumbSize = cssHelpers.sliderCircleSize;
 
     min.style.width = `${parseInt(
@@ -658,15 +666,12 @@ class SimpleRange extends HTMLElement {
         el.getAttribute('id') === constants.MIN;
 
       if (isMinEl) {
-        return (
-          minValue > this.minRange &&
-          minValue < this.maxRange &&
-          minValue < maxValue
-        );
+        return (minValue) =>
+          this.minRange && minValue < this.maxRange && minValue < maxValue;
       } else {
         return (
           maxValue > this.minRange &&
-          maxValue < this.maxRange &&
+          maxValue <= this.maxRange &&
           maxValue > minValue
         );
       }
@@ -708,7 +713,10 @@ class SimpleRange extends HTMLElement {
       }
 
       if (this.circleFocusBorder) {
-        el.style.setProperty('--sliderCircleFocusBorder', this.circleFocusBorder);
+        el.style.setProperty(
+          '--sliderCircleFocusBorder',
+          this.circleFocusBorder
+        );
       }
 
       if (this.circleSize) {
@@ -773,6 +781,7 @@ class SimpleRange extends HTMLElement {
       setPropertyForLabels('--labelFontSize', this.labelFontSize);
     }
   }
+
   createLabels(slider, min) {
     if (this.hideLabel) {
       return;
