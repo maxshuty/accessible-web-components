@@ -1,6 +1,6 @@
 {
   "name": "accessible-ui-components",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A library of simple, lightweight, extensible, and accessible UI Components",
   "main": "./src/components/simpleRange.js.js",
   "scripts": {
