@@ -220,7 +220,7 @@ class SimpleRange extends HTMLElement {
   }
 
   get circleBorderColor() {
-    // Altering the circle
+    // Altering the circle 
     return this.getAttribute('circle-border-color');
   }
 
