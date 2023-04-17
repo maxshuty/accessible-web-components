@@ -225,7 +225,7 @@ class SimpleRange extends HTMLElement {
   }
 
   get circleFocusBorderColor() {
-    //
+    // 
     return this.getAttribute('circle-focus-border-color');
   }
 
