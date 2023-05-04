@@ -472,7 +472,9 @@ class SimpleRange extends HTMLElement {
     this.setupResetFunctionality();
   }
 
-  // We
+  // We are using currying because the `ResizeObserver` will call whatever
+  // function you pass into it passing an `entries` object and if you need
+  // to access `this` then you need to pass that into the function as well
   onResize(localThis) {
     return function (entries) {
       const slider = entries[0].target;
@@ -686,6 +688,8 @@ class SimpleRange extends HTMLElement {
   }
 
   setupStyles() {
+    // TODO: Max P - this logic should be revisited and made more dynamic
+    // TODO: without all of the conditioals for each styleable attribute
     const rangeInputEls = this.shadowRoot.querySelectorAll(
       '.min-max-slider > .range-input'
     );
@@ -793,6 +797,7 @@ class SimpleRange extends HTMLElement {
     let lower = document.createElement(labelType);
     let upper = document.createElement(labelType);
 
+    // range-input-label & range-span-label's are created here:
     lower.classList.add(`range-${labelType}-label`, 'lower', 'value');
     upper.classList.add(`range-${labelType}-label`, 'upper', 'value');
 
@@ -825,8 +830,9 @@ class SimpleRange extends HTMLElement {
     slider.insertBefore(lower, min.previousElementSibling);
     slider.insertBefore(upper, min.previousElementSibling);
 
-    // Adding a "-" symbol beyween the range inputs since you cannot do
-    // this via CSS pseudo (before/after) selectors on an input element
+    // Adding a "-" symbol beyween the range inputs and labels since you cannot do
+    // this via CSS pseudo (before/after) selectors on an input element and
+    // we already use the pseudo selectors as a customization option for the labels
     let dashIcon = document.createElement('i');
     dashIcon.classList.add('range-input-dash-icon');
     dashIcon.setAttribute('aria-hidden', true);
@@ -839,3 +845,5 @@ class SimpleRange extends HTMLElement {
 }
 
 window.customElements.define('range-selector', SimpleRange);
+
+// TODO ADD STEP AND MAKE THE STEP HAVE THE ABILITY TO GROW DYNAMICALLY! (TAKE IN A SEPARATE FUNCTION)
