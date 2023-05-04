@@ -472,7 +472,7 @@ class SimpleRange extends HTMLElement {
     this.setupResetFunctionality();
   }
 
-  // 
+  // We
   onResize(localThis) {
     return function (entries) {
       const slider = entries[0].target;
