@@ -13,7 +13,7 @@ This also by no means guarantees that it is fully accessible as accessibility re
 ### Browser Support
 
 Supported by all modern browsers.
-IE is not supported, and frankly you should probably not support an insecure, unsupported, and non-accessible browser either.
+IE is not supported, and frankly you should not support an insecure, unsupported, and non-accessible browser either.
 
 ## Demo
 
