@@ -24,6 +24,12 @@
       );
 
       document.addEventListener('my-custom-range-changed-event', () => alert('my-custom-range-changed-event was emitted'));
+
+      function resetAllRanges() {
+        var event = new CustomEvent("range-reset", {detail: {sliderId: null}});
+
+        document.dispatchEvent(event);
+      }
     </script>
   </head>
   <body>
@@ -49,6 +55,20 @@
 &lt;/script&gt;
             </code>
           </pre>
+        </p>
+          <p>
+            If you want to programatically reset ranges you can do that using the <code>range-reset</code> event
+            <pre>
+              <code>
+// If you provide a slider ID then it will reset ONLY that slider, else it will reset ALL sliders
+const sliderId = null;
+const event = new CustomEvent("range-reset", { detail: { sliderId: sliderId } });
+
+document.dispatchEvent(event);
+              </code>
+            </pre>
+
+            <button onclick="resetAllRanges()">Reset All Ranges</button>
         </p>
       </div>
 

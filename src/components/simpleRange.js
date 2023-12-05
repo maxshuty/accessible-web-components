@@ -523,7 +523,7 @@ class SimpleRange extends HTMLElement {
   // sliderId then it will only reset that specific slider, else it will
   // reset *all* sliders
   setupResetFunctionality() {
-    window.addEventListener('range-reset', (event) => {
+    document.addEventListener('range-reset', (event) => {
       if (
         !event.detail ||
         !event.detail.sliderId ||

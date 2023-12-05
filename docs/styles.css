@@ -59,3 +59,17 @@ code {
   font-weight: bold;
   color: red;
 }
+
+button {
+  border: none;
+  border-radius: 4px;
+  background-color: #363636;
+  color: #fff;
+  padding: 0.5em 1em;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  background-color: #5f5d5d;
+}
