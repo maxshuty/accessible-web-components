@@ -62,11 +62,7 @@ template.innerHTML = `
         appearance: none;
         outline: none !important;
         background: transparent;
-        background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${
-          cssHelpers.sliderBackgroundColor
-        } 30%, ${
-  cssHelpers.sliderBackgroundColor
-} 60%, transparent 60%, transparent 100%);
+        background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, ${cssHelpers.sliderBackgroundColor} 30%, ${cssHelpers.sliderBackgroundColor} 60%, transparent 60%, transparent 100%);
       }
         
       .min-max-slider > .range-input::-webkit-slider-thumb {
@@ -160,7 +156,7 @@ class SimpleRange extends HTMLElement {
     return (
       parseInt(this.getAttribute('min-range')) ||
       parseInt(this.getAttribute('min')) ||
-      1
+      0
     );
   }
   set minRange(minimumRange) {
@@ -442,7 +438,13 @@ class SimpleRange extends HTMLElement {
     this.createLabels(slider, min);
     this.createLegend(slider);
 
-    this.draw(slider, this.getAverage((this.presetMin || this.minRange), (this.presetMax || this.maxRange)));
+    this.draw(
+      slider,
+      this.getAverage(
+        this.presetMin || this.minRange,
+        this.presetMax || this.maxRange
+      )
+    );
 
     // Adding update event that updates the range selector
     min.addEventListener('input', this.onRangeInput);
@@ -618,7 +620,7 @@ class SimpleRange extends HTMLElement {
 
     let min = slider.querySelector(minQuerySelector);
     let max = slider.querySelector(maxQuerySelector);
-    
+
     let minValue = Math.floor(parseInt(min.value));
     let maxValue = Math.floor(parseInt(max.value));
 
@@ -696,7 +698,10 @@ class SimpleRange extends HTMLElement {
       }
 
       if (this.circleFocusBorder) {
-        el.style.setProperty('--sliderCircleFocusBorder', this.circleFocusBorder);
+        el.style.setProperty(
+          '--sliderCircleFocusBorder',
+          this.circleFocusBorder
+        );
       }
 
       if (this.circleSize) {
