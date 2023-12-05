@@ -156,7 +156,7 @@ class SimpleRange extends HTMLElement {
     return (
       parseInt(this.getAttribute('min-range')) ||
       parseInt(this.getAttribute('min')) ||
-      1
+      0
     );
   }
   set minRange(minimumRange) {
@@ -168,7 +168,7 @@ class SimpleRange extends HTMLElement {
     return (
       parseInt(this.getAttribute('max-range')) ||
       parseInt(this.getAttribute('max')) ||
-      0
+      1
     );
   }
   set maxRange(maximumRange) {
@@ -619,9 +619,13 @@ class SimpleRange extends HTMLElement {
         lower.value = min.getAttribute('data-value');
         upper.value = max.getAttribute('data-value');
       } else {
-        if(this.numberLocale) {
-          lower.innerHTML = parseInt(min.getAttribute('data-value')).toLocaleString(this.numberLocale);
-          upper.innerHTML = parseInt(max.getAttribute('data-value')).toLocaleString(this.numberLocale);
+        if (this.numberLocale) {
+          lower.innerHTML = parseInt(
+            min.getAttribute('data-value')
+          ).toLocaleString(this.numberLocale);
+          upper.innerHTML = parseInt(
+            max.getAttribute('data-value')
+          ).toLocaleString(this.numberLocale);
         } else {
           lower.innerHTML = min.getAttribute('data-value');
           upper.innerHTML = max.getAttribute('data-value');
@@ -760,7 +764,9 @@ class SimpleRange extends HTMLElement {
           (i / (this.numberOfLegendItemsToShow - 1)) *
             (this.maxRange - this.minRange)
       );
-      const valString = this.numberLocale ? val.toLocaleString(this.numberLocale) : val.toString();
+      const valString = this.numberLocale
+        ? val.toLocaleString(this.numberLocale)
+        : val.toString();
       legendvalues[i].appendChild(document.createTextNode(valString));
       legend.appendChild(legendvalues[i]);
     }
