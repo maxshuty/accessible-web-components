@@ -268,6 +268,10 @@ class SimpleRange extends HTMLElement {
     );
   }
 
+  get numberLocale() {
+    return this.getAttribute('number-locale');
+  }
+
   static get observedAttributes() {
     return [
       'min-label',
@@ -615,8 +619,13 @@ class SimpleRange extends HTMLElement {
         lower.value = min.getAttribute('data-value');
         upper.value = max.getAttribute('data-value');
       } else {
-        lower.innerHTML = min.getAttribute('data-value');
-        upper.innerHTML = max.getAttribute('data-value');
+        if(this.numberLocale) {
+          lower.innerHTML = parseInt(min.getAttribute('data-value')).toLocaleString(this.numberLocale);
+          upper.innerHTML = parseInt(max.getAttribute('data-value')).toLocaleString(this.numberLocale);
+        } else {
+          lower.innerHTML = min.getAttribute('data-value');
+          upper.innerHTML = max.getAttribute('data-value');
+        }
       }
     }
   }
@@ -751,7 +760,8 @@ class SimpleRange extends HTMLElement {
           (i / (this.numberOfLegendItemsToShow - 1)) *
             (this.maxRange - this.minRange)
       );
-      legendvalues[i].appendChild(document.createTextNode(val));
+      const valString = this.numberLocale ? val.toLocaleString(this.numberLocale) : val.toString();
+      legendvalues[i].appendChild(document.createTextNode(valString));
       legend.appendChild(legendvalues[i]);
     }
 
