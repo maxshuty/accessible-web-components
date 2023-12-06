@@ -474,6 +474,7 @@ class SimpleRange extends HTMLElement {
     );
 
     this.setupResetFunctionality();
+    this.setupRangeSetFunctionality();
   }
 
   // We are using currying because the `ResizeObserver` will call whatever
@@ -532,7 +533,35 @@ class SimpleRange extends HTMLElement {
         // The user has not provided a sliderId so we reset *every* slider
         // on the page, OR they *have* provided a sliderId so we are only
         // resetting that specific slider
+        this.presetMin = this.minRange;
+        this.presetMax = this.maxRange;
         this.init();
+      }
+    });
+  }
+
+  // Adding event listener to update range values
+  setupRangeSetFunctionality() {
+    document.addEventListener('range-set', (event) => {
+      if (
+        !event.detail ||
+        !event.detail.minValue ||
+        !event.detail.maxValue ||
+        !event.detail.sliderId
+      ) {
+        console.error(
+          `Simple Range Error: range-set was called without providing all of the
+           required values. The event must contain the minValue, maxValue, and the
+           sliderId. Additionally, the slider must have an id attribute on the
+           component itself.`
+        );
+
+        return;
+      }
+
+      if (event.detail.sliderId === this.sliderId) {
+        this.presetMin = event.detail.minValue;
+        this.presetMax = event.detail.maxValue;
       }
     });
   }
