@@ -26,7 +26,23 @@
       document.addEventListener('my-custom-range-changed-event', () => alert('my-custom-range-changed-event was emitted'));
 
       function resetAllRanges() {
-        var event = new CustomEvent("range-reset", {detail: {sliderId: null}});
+        const event = new CustomEvent('range-reset', {
+            detail: { 
+              sliderId: null 
+            },
+        });
+
+        document.dispatchEvent(event);
+      }
+
+      function setRange() {
+        const event = new CustomEvent('range-set', {
+          detail: { 
+            sliderId: 'basicUsageRangeSelector', 
+            minValue: 350, 
+            maxValue: 700 
+          }
+        });
 
         document.dispatchEvent(event);
       }
@@ -56,19 +72,19 @@
             </code>
           </pre>
         </p>
-          <p>
-            If you want to programatically reset ranges you can do that using the <code>range-reset</code> event
-            <pre>
-              <code>
+        <p>
+          If you want to programatically reset ranges you can do that using the <code>range-reset</code> event
+          <pre>
+            <code>
 // If you provide a slider ID then it will reset ONLY that slider, else it will reset ALL sliders
 const sliderId = null;
 const event = new CustomEvent("range-reset", { detail: { sliderId: sliderId } });
 
 document.dispatchEvent(event);
-              </code>
-            </pre>
+            </code>
+          </pre>
 
-            <button onclick="resetAllRanges()">Reset All Ranges</button>
+          <button onclick="resetAllRanges()">Reset All Ranges</button>
         </p>
       </div>
 
@@ -83,7 +99,28 @@ document.dispatchEvent(event);
           </pre>
         </p>
 
-        <range-selector min-range="0" max-range="1000" />
+        <range-selector id="basicUsageRangeSelector" min-range="0" max-range="1000" />
+      </div>
+
+      <div>
+        <p>
+          If you want to programatically set the range you can do that using the <code>range-set</code> event
+          <pre>
+            <code>
+const event = new CustomEvent('range-set', {
+  detail: { 
+    sliderId: 'basicUsageRangeSelector', 
+    minValue: 350, 
+    maxValue: 700 
+  }
+});
+      
+document.dispatchEvent(event);
+            </code>
+          </pre>
+
+          <button onclick="setRange()">Set the basic usage range through JavaScript events</button>
+        </p>
       </div>
 
       <div>
