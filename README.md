@@ -228,4 +228,6 @@ Found a bug or want a new feature? Create an issue or a feature request [here](h
 
 ## Contributors
 
-[**Max Poshusta**](https://www.linkedin.com/in/maxposhusta/)
+Created by [**Max Poshusta**](https://www.linkedin.com/in/maxposhusta/)
+
+[**sincspecv**](https://github.com/sincspecv) added [**`number-locale`**](https://github.com/maxshuty/accessible-web-components/pull/15)
