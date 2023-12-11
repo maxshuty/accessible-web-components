@@ -1,5 +1,5 @@
 /*
-  SimpleRange v1.0.7 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
+  SimpleRange v1.0.11 | Repo: https://github.com/maxshuty/accessible-web-components/src/components/simpleRange.js
   By Max Poshusta | https://github.com/maxshuty | https://www.linkedin.com/in/maxposhusta/
 */
 
@@ -286,6 +286,9 @@ class SimpleRange extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
+    // this.init() cannot be called outside of the switch or else if
+    // there are multiple sliders on the same page then you will fire
+    // that init event for all of them as well causing weird bugs
     switch (name) {
       case 'min-label':
         if (!newValue) {
@@ -298,6 +301,7 @@ class SimpleRange extends HTMLElement {
         }
 
         minLabel.innerText = newValue;
+        this.init();
         break;
       case 'max-label':
         if (!newValue) {
@@ -310,6 +314,7 @@ class SimpleRange extends HTMLElement {
         }
 
         maxLabel.innerText = newValue;
+        this.init();
         break;
       case 'min-range':
       case 'min':
@@ -318,6 +323,7 @@ class SimpleRange extends HTMLElement {
         }
 
         this.minRange = newValue;
+        this.init();
         break;
       case 'max-range':
       case 'max':
@@ -326,6 +332,7 @@ class SimpleRange extends HTMLElement {
         }
 
         this.maxRange = newValue;
+        this.init();
         break;
       case 'preset-min':
         if (isNaN(newValue) || oldValue === newValue) {
@@ -333,6 +340,7 @@ class SimpleRange extends HTMLElement {
         }
 
         this.presetMin = newValue;
+        this.init();
         break;
       case 'preset-max':
         if (isNaN(newValue) || oldValue === newValue) {
@@ -340,10 +348,9 @@ class SimpleRange extends HTMLElement {
         }
 
         this.presetMax = newValue;
+        this.init();
         break;
     }
-
-    this.init();
   }
 
   connectedCallback() {
@@ -890,5 +897,3 @@ class SimpleRange extends HTMLElement {
 }
 
 window.customElements.define('range-selector', SimpleRange);
-
-// TODO ADD STEP AND MAKE THE STEP HAVE THE ABILITY TO GROW DYNAMICALLY! (TAKE IN A SEPARATE FUNCTION)
