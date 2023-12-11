@@ -1,6 +1,6 @@
 # Simple Range
 
-A simple, lightweight (13kb), responsive, customizeable, extensible, & accessible range selector!
+A simple, lightweight (20kb), responsive, customizeable, extensible, & accessible range selector!
 
 With Simple Range you can easily create multiple extensible & accessible range selectors on a page, and you don't even have to worry about event listeners not getting cleaned up because it will handle all of that for you!
 
