@@ -26,12 +26,6 @@ View the demo with many examples [**here**](https://maxshuty.github.io/accessibl
 
 There are three installation options, select your preferred method of installation below.
 
-### **npm**
-
-```
-npm i accessible-web-components
-```
-
 ### **CDN**
 
 [https://cdn.jsdelivr.net/gh/maxshuty/accessible-web-components@latest/dist/simpleRange.min.js](https://cdn.jsdelivr.net/gh/maxshuty/accessible-web-components@latest/dist/simpleRange.min.js)
