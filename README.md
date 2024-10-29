@@ -74,6 +74,7 @@ Optional attributes you can provide to customize your range selector to fit your
 | `min-label` | string | Accessibility label for the minimum value label | `'Minimum'` |
 | `max-label` | string | Accessibility label for the maximium value label | `'Maximum'` |
 | `event-name-to-emit-on-change` | string | The event name that will be emitted when the user adjusts the range. I.e. document.addEventListener('my-custom-range-changed-event-name-here', () => doStuff() | `range-changed` |
+| `emit-event-on-update` | boolean | Whether or not to emit the event when the cursor is sliding | `false` |
 | `inputs-for-labels` | boolean | Whether or not to use inputs instead of labels so that the user can manually type in the range. Simply add the `inputs-for-labels` attribute for this to work (truth is inferred by the presence of this attribute existing) | `false` |
 | `hide-label` | boolean | Whether or not to hide the label. Simply add the `hide-label` attribute for this to work (truth is inferred by the presence of this attribute existing) | `false` |
 | `hide-legend` | boolean | Whether or not to hide the legend. Simply add the `hide-legend` attribute for this to work (truth is inferred by the presence of this attribute existing) | `false` |
@@ -202,6 +203,19 @@ the user has adjusted the ranges:
   max-label="i18nMaxLabel"
   id="yearRangeSelector"
   event-name-to-emit-on-change="my-custom-range-changed-event"
+/>
+```
+
+If you need to listen for events while sliding the cursor, then you can set `emit-event-on-update`:
+
+```
+<range-selector
+  min-range="1092"
+  max-range="2022"
+  min-label="i18nMinLabel"
+  max-label="i18nMaxLabel"
+  id="yearRangeSelector"
+  emit-event-on-update
 />
 ```
 

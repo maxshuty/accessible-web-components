@@ -268,6 +268,10 @@ class SimpleRange extends HTMLElement {
     );
   }
 
+  get emitEventOnUpdate() {
+    return this.hasAttribute('emit-event-on-update');
+  }
+
   get numberLocale() {
     return this.getAttribute('number-locale');
   }
@@ -704,6 +708,12 @@ class SimpleRange extends HTMLElement {
     maxSliderInput.setAttribute('data-value', maxValue);
 
     this.draw(slider, this.getAverage(minValue, maxValue));
+
+    if (this.emitOnEventUpdate) {
+      // Emit the custom event so that the consumer of this component
+      // can do whatever they need when the cursor is sliding.
+      this.emitRange();
+    }
   }
 
   isValidRangeSelection(el, minValue, maxValue) {
