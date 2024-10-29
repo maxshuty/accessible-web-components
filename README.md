@@ -269,7 +269,8 @@ They are to used for accessibility and screen readers and **if you want this to 
 
 Created by [**Max Poshusta**](https://www.linkedin.com/in/maxposhusta/)
 
-[**sincspecv**](https://github.com/sincspecv) added [**`number-locale`**](https://github.com/maxshuty/accessible-web-components/pull/15)
+- [**sincspecv**](https://github.com/sincspecv) added [**`number-locale`**](https://github.com/maxshuty/accessible-web-components/pull/15)
+- [**dapicester**](https://github.com/dapicester) added [**`emit-event-on-update`**](https://github.com/maxshuty/accessible-web-components/pull/29)
 
 ### **Contributions**
 
