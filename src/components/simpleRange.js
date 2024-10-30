@@ -709,7 +709,7 @@ class SimpleRange extends HTMLElement {
 
     this.draw(slider, this.getAverage(minValue, maxValue));
 
-    if (this.emitOnEventUpdate) {
+    if (this.emitEventOnUpdate) {
       // Emit the custom event so that the consumer of this component
       // can do whatever they need when the cursor is sliding.
       this.emitRange();
