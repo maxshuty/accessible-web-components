@@ -879,6 +879,16 @@ class SimpleRange extends HTMLElement {
       upper.setAttribute(constants.MAX, this.maxRange);
       upper.setAttribute(constants.RANGE_INPUT_DATA_LABEL_MAX, '');
 
+      lower.setAttribute('step', '1');
+      lower.setAttribute(constants.MAX, this.minRange);
+      lower.setAttribute(constants.MAX, this.maxRange);
+      lower.setAttribute(constants.RANGE_INPUT_DATA_LABEL_MIN, '');
+
+      upper.setAttribute('step', '1');
+      upper.setAttribute(constants.MIN, this.minRange);
+      upper.setAttribute(constants.MAX, this.maxRange);
+      upper.setAttribute(constants.RANGE_INPUT_DATA_LABEL_MAX, '');
+
       lower.addEventListener('input', this.onRangeInput);
       upper.addEventListener('input', this.onRangeInput);
 
